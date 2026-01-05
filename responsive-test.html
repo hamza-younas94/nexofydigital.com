@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Test - Nexofy Digital</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        iframe {
+            width: 100%;
+            border: 3px solid #6366f1;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .viewport-info {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #6366f1;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 3px solid #6366f1;
+            padding-bottom: 10px;
+        }
+        .breakpoint {
+            display: inline-block;
+            padding: 8px 15px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border-radius: 5px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Nexofy Digital - Responsive Design Test</h1>
+        
+        <div class="success">
+            <strong>✅ Fixed Issues:</strong>
+            <ul>
+                <li><strong>SMTP Enabled:</strong> contact.php now includes smtp-config.php and USE_SMTP is true</li>
+                <li><strong>PHPMailer Installed:</strong> Composer package installed successfully</li>
+                <li><strong>Responsive CSS:</strong> Added breakpoints for 1024px, 768px, and 480px</li>
+                <li><strong>Mobile Menu:</strong> Z-index fixed for proper display</li>
+            </ul>
+        </div>
+
+        <div class="note">
+            <strong>⚠️ Action Required:</strong><br>
+            Update <code>smtp-config.php</code> with your email credentials:
+            <pre style="background: #2d2d2d; color: #fff; padding: 15px; border-radius: 5px; overflow-x: auto;">
+define('SMTP_USERNAME', 'your-email@gmail.com');
+define('SMTP_PASSWORD', 'your-app-password');</pre>
+            <a href="https://myaccount.google.com/apppasswords" target="_blank" style="color: #6366f1; font-weight: bold;">→ Get Gmail App Password</a>
+        </div>
+
+        <h2>📏 Responsive Breakpoints</h2>
+        <div>
+            <span class="breakpoint">1024px - Tablets (2 columns)</span>
+            <span class="breakpoint">768px - Mobile (Single column)</span>
+            <span class="breakpoint">480px - Small phones (Compact)</span>
+        </div>
+
+        <h2>🖥️ Desktop View (Full Width)</h2>
+        <iframe src="index.html" height="800"></iframe>
+
+        <h2>📱 Tablet View (768px)</h2>
+        <iframe src="index.html" height="800" style="max-width: 768px; margin: 0 auto; display: block;"></iframe>
+
+        <h2>📱 Mobile View (480px)</h2>
+        <iframe src="index.html" height="800" style="max-width: 480px; margin: 0 auto; display: block;"></iframe>
+
+        <h2>🔧 What Was Fixed</h2>
+        <div class="viewport-info">
+            <h3>1. SMTP Configuration ✅</h3>
+            <ul>
+                <li>Uncommented <code>require_once __DIR__ . '/smtp-config.php';</code></li>
+                <li>Changed <code>USE_SMTP</code> from false to true</li>
+                <li>Added <code>require_once __DIR__ . '/vendor/autoload.php';</code> for PHPMailer</li>
+                <li>Installed PHPMailer v7.0.1 via Composer</li>
+            </ul>
+
+            <h3>2. Responsive CSS ✅</h3>
+            <ul>
+                <li><strong>1024px Breakpoint:</strong> 2-column grid for tablets</li>
+                <li><strong>768px Breakpoint:</strong> Single column, smaller text, compact spacing</li>
+                <li><strong>480px Breakpoint:</strong> Extra small phones, minimum padding</li>
+                <li>Mobile menu with z-index: 999</li>
+                <li>Responsive hero: 120px → 100px → 60px padding</li>
+                <li>Responsive text: 3.5rem → 2rem → 1.75rem</li>
+                <li>Responsive stats: 4 cols → 2 cols → 1 col</li>
+                <li>Responsive buttons: Full width on mobile (max 300px)</li>
+            </ul>
+        </div>
+
+        <h2>🧪 Test Instructions</h2>
+        <div class="viewport-info">
+            <ol>
+                <li><strong>Desktop:</strong> Open http://localhost:8000 in browser</li>
+                <li><strong>Mobile:</strong> Press F12 → Click device icon → Select iPhone/Android</li>
+                <li><strong>Test Menu:</strong> Click hamburger menu on mobile</li>
+                <li><strong>Test Form:</strong> Submit contact form (will use SMTP once configured)</li>
+                <li><strong>Test Resize:</strong> Drag browser window to see breakpoints</li>
+            </ol>
+        </div>
+
+        <div class="note">
+            <strong>📧 Email Testing:</strong><br>
+            Before SMTP works, you need to:
+            <ol>
+                <li>Open <code>smtp-config.php</code></li>
+                <li>Replace <code>your-email@gmail.com</code> with your Gmail</li>
+                <li>Replace <code>your-app-password</code> with Gmail App Password</li>
+                <li>Test by submitting the contact form</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

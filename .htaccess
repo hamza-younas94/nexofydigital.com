@@ -1,0 +1,123 @@
+# Namecheap cPanel .htaccess Configuration
+# Website: nexofydigital.com
+
+# Enable RewriteEngine
+RewriteEngine On
+RewriteBase /
+
+# ============================================
+# Remove .html Extension for Professional URLs
+# ============================================
+
+# Redirect existing .html URLs to clean URLs (301 permanent redirect)
+RewriteCond %{THE_REQUEST} ^GET\ /[^?\s]+\.html
+RewriteRule ^(.*)\.html$ /$1 [R=301,L,NE]
+
+# Route clean URLs to .html files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# ============================================
+# Protect PHP Files from Direct Access
+# ============================================
+
+# Block direct access to ALL PHP files except contact.php (for AJAX)
+<FilesMatch "\.php$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Allow access ONLY to contact.php for form submissions
+<Files "contact.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# Additional protection for config files
+<FilesMatch "^(smtp-config|composer|config)\.php$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# ============================================
+# Security Headers
+# ============================================
+
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Content Security Policy
+    Header always set Content-Security-Policy "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:;"
+</IfModule>
+
+# ============================================
+# Protect Sensitive Files
+# ============================================
+
+# Deny access to hidden files (like .git, .env, .htaccess itself)
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Protect composer files
+<FilesMatch "^(composer\.json|composer\.lock)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Protect rate limiting and log files
+<FilesMatch "^(rate_limit\.json|contact_submissions\.log)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Deny access to vendor directory (if publicly accessible)
+RewriteRule ^vendor/.*$ - [F,L]
+
+# ============================================
+# Performance Optimization
+# ============================================
+
+# Enable GZIP Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# ============================================
+# Force HTTPS (Uncomment when SSL is active)
+# ============================================
+
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ============================================
+# WWW to non-WWW Redirect (or vice versa)
+# ============================================
+
+# Remove www (Uncomment to use)
+# RewriteCond %{HTTP_HOST} ^www\.nexofydigital\.com [NC]
+# RewriteRule ^(.*)$ https://nexofydigital.com/$1 [L,R=301]
+
+# OR Add www (Uncomment to use)
+# RewriteCond %{HTTP_HOST} ^nexofydigital\.com [NC]
+# RewriteRule ^(.*)$ https://www.nexofydigital.com/$1 [L,R=301]
