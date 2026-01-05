@@ -10,11 +10,11 @@
  */
 
 // SMTP Server Settings
-define('SMTP_HOST', 'smtp.gmail.com');              // Gmail: smtp.gmail.com | Outlook: smtp.office365.com
-define('SMTP_PORT', 587);                            // 587 for TLS, 465 for SSL
-define('SMTP_SECURE', 'tls');                        // 'tls' or 'ssl'
-define('SMTP_USERNAME', 'your-email@gmail.com');     // Your email address
-define('SMTP_PASSWORD', 'your-app-password');        // App password (not your regular password)
+define('SMTP_HOST', 'localhost');                    // Use localhost for same-server cPanel email
+define('SMTP_PORT', 25);                             // Port 25 for local mail (no SSL needed)
+define('SMTP_SECURE', '');                           // No encryption needed for localhost
+define('SMTP_USERNAME', 'info@nexofydigital.com');   // Your email address
+define('SMTP_PASSWORD', 'InterNet@098');             // cPanel email password
 
 // Email Settings
 define('FROM_EMAIL', 'noreply@nexofydigital.com');   // Sender email

@@ -153,8 +153,21 @@ function sendEmailSMTP($data) {
         $mail->SMTPAuth   = true;
         $mail->Username   = SMTP_USERNAME;
         $mail->Password   = SMTP_PASSWORD;
-        $mail->SMTPSecure = SMTP_SECURE;
         $mail->Port       = SMTP_PORT;
+        
+        // Handle empty SMTP_SECURE for localhost port 25
+        if (SMTP_SECURE !== '') {
+            $mail->SMTPSecure = SMTP_SECURE;
+        } else {
+            $mail->SMTPAutoTLS = false; // Disable auto TLS for localhost
+        }
+        
+        // Debugging (disable in production)
+        // $mail->SMTPDebug = 2; // Enable for troubleshooting
+        
+        // Timeout settings for slow connections
+        $mail->Timeout = 30;
+        $mail->SMTPKeepAlive = true;
         
         // Service names mapping
         $services = [
