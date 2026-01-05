@@ -258,7 +258,7 @@ contactForm.addEventListener('submit', async (e) => {
         `;
         contactForm.insertBefore(errorMessage, contactForm.firstChild);
         
-        console.error('Form submission error:', error);
+        // console.error('Form submission error:', error);
     } finally {
         // Reset button state
         btnText.style.display = 'inline';
@@ -359,11 +359,11 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Console branding
-console.log('%c🚀 Nexofy Digital', 'color: #6366f1; font-size: 24px; font-weight: bold;');
-console.log('%c✨ Professional Digital Solutions', 'color: #8b5cf6; font-size: 14px; font-weight: 600;');
-console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #e5e7eb;');
-console.log('%c✅ Website loaded successfully', 'color: #10b981; font-size: 12px;');
-console.log('%c📧 Contact form: Active with rate limiting', 'color: #6366f1; font-size: 12px;');
-console.log('%c🔒 Security: Domain restricted & spam protected', 'color: #8b5cf6; font-size: 12px;');
-console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #e5e7eb;');
+// Console branding (disabled for production)
+// console.log('%c🚀 Nexofy Digital', 'color: #6366f1; font-size: 24px; font-weight: bold;');
+// console.log('%c✨ Professional Digital Solutions', 'color: #8b5cf6; font-size: 14px; font-weight: 600;');
+// console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #e5e7eb;');
+// console.log('%c✅ Website loaded successfully', 'color: #10b981; font-size: 12px;');
+// console.log('%c📧 Contact form: Active with rate limiting', 'color: #6366f1; font-size: 12px;');
+// console.log('%c🔒 Security: Domain restricted & spam protected', 'color: #8b5cf6; font-size: 12px;');
+// console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #e5e7eb;');
