@@ -2,6 +2,7 @@
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
+if (mobileMenuToggle && navMenu) {
 mobileMenuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     mobileMenuToggle.classList.toggle('active');
@@ -14,9 +15,12 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
         mobileMenuToggle.classList.remove('active');
     });
 });
+}
 
 // Navbar scroll effect
 const navbar = document.querySelector('.navbar');
+
+if (navbar) {
 let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
@@ -30,15 +34,17 @@ window.addEventListener('scroll', () => {
     
     lastScroll = currentScroll;
 });
+}
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         
         if (target) {
-            const navbarHeight = navbar.offsetHeight;
+            e.preventDefault();
+            const navbar = document.querySelector('.navbar');
+            const navbarHeight = navbar ? navbar.offsetHeight : 0;
             const targetPosition = target.offsetTop - navbarHeight;
             
             window.scrollTo({
@@ -52,6 +58,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Contact Form Handling with Professional Validation
 const contactForm = document.getElementById('contactForm');
 
+// Only initialize form validation if form exists
+if (contactForm) {
 // Validation functions
 const validators = {
     name: (value) => {
@@ -268,6 +276,8 @@ contactForm.addEventListener('submit', async (e) => {
     }
 });
 
+} // End of contactForm check
+
 // Intersection Observer for animations
 const observerOptions = {
     threshold: 0.1,
@@ -331,13 +341,16 @@ if (heroStats) {
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-menu a');
 
+if (sections.length > 0 && navLinks.length > 0) {
 window.addEventListener('scroll', () => {
     let current = '';
+    const navbar = document.querySelector('.navbar');
+    const navbarOffset = navbar ? navbar.offsetHeight : 0;
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= sectionTop - navbar.offsetHeight - 100) {
+        if (window.pageYOffset >= sectionTop - navbarOffset - 100) {
             current = section.getAttribute('id');
         }
     });
@@ -349,15 +362,18 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+}
 
 // Add parallax effect to hero section
+const heroElement = document.querySelector('.hero');
+if (heroElement) {
 window.addEventListener('scroll', () => {
-    const hero = document.querySelector('.hero');
     const scrolled = window.pageYOffset;
-    if (hero && scrolled < hero.offsetHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.4}px)`;
+    if (scrolled < heroElement.offsetHeight) {
+        heroElement.style.transform = `translateY(${scrolled * 0.4}px)`;
     }
 });
+}
 
 // Console branding (disabled for production)
 // console.log('%c🚀 Nexofy Digital', 'color: #6366f1; font-size: 24px; font-weight: bold;');
