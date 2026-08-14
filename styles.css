@@ -429,8 +429,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 /* never let big display text force a sideways scroll */
 h1, h2, h3, .hero-title, .section-header h2, .work-body h3 { overflow-wrap: break-word; }
 
-@media (max-width: 560px) {
-    /* Compact, icon-on-the-left service cards */
+@media (max-width: 720px) {
+    /* Compact, icon-on-the-left service cards (matches the single-column grid) */
     .services-grid { gap: 12px; }
     .service-card {
         display: grid; grid-template-columns: 44px 1fr; column-gap: 14px; align-items: center;

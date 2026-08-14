@@ -2,6 +2,13 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.3.1] - 2026-08-15
+
+### Fixed
+- Compact icon-left service cards only kicked in at ≤560px, but cards go single-column
+  at ≤720px — so at 561–720px (larger phones, landscape, resized windows) they still
+  showed icon-on-top and looked unchanged. Extended the compact layout to ≤720px.
+
 ## [2.3.0] - 2026-08-15
 
 ### Added
