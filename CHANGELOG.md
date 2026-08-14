@@ -2,6 +2,14 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.1.2] - 2026-08-14
+
+### Changed
+- Nav "Services" now links to the `/services` hub site-wide (was the home `#services`
+  anchor) so the new service pages are reachable from the primary nav, not just by
+  scrolling the landing page. Added a "View all services" link to the home services
+  section header.
+
 ## [2.1.1] - 2026-08-14
 
 ### Added

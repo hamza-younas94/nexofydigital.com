@@ -198,7 +198,7 @@ const NAV = `
                     <span class="logo-word">Nexofy<span class="logo-dim">Digital</span></span>
                 </a>
                 <ul class="nav-menu">
-                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/services">Services</a></li>
                     <li><a href="/#work">Work</a></li>
                     <li><a href="/#process">Process</a></li>
                     <li><a href="/#about">About</a></li>
