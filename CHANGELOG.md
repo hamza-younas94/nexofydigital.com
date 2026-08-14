@@ -2,6 +2,14 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.2.1] - 2026-08-14
+
+### Fixed
+- **Legal pages were unreadable on the dark theme.** Their inline styles used
+  light-theme text colors (`#374151`, `#1f2937`, `#6b7280`) on the now-dark body —
+  dark-on-dark. Rethemed the privacy/terms/data-deletion content for the dark palette
+  (light text, lime headings, dark surfaces for info/step/warning boxes, lime links).
+
 ## [2.2.0] - 2026-08-14
 
 ### Added
