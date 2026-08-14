@@ -230,6 +230,7 @@ const FOOTER = `
                         <li><a href="/android-app-development">Android apps</a></li>
                         <li><a href="/crm-cms-development">CRM / CMS</a></li>
                         <li><a href="/inventory-management-software">ePOS &amp; inventory</a></li>
+                        <li><a href="/services">All services</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -270,6 +271,123 @@ const GA = `    <!-- Google tag (gtag.js) -->
     </script>`;
 
 const icon = (key, cls) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${ICONS[key]}</svg>`;
+const cardTitle = (s) => s.name.replace(' Development', '').replace(' System', '').replace(' Software', '');
+
+function hubPage() {
+  const url = `${ORIGIN}/services`;
+  const title = 'Our Services — Custom Software, Web &amp; Android App Development | Nexofy Digital';
+  const desc = 'Everything Nexofy Digital designs and builds: custom web apps, Android apps, CRM/CMS platforms, ePOS, restaurant management and inventory systems.';
+  const jsonld = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${ORIGIN}/` },
+          { '@type': 'ListItem', position: 2, name: 'Services', item: url },
+        ],
+      },
+      {
+        '@type': 'ItemList',
+        itemListElement: SERVICES.map((s, i) => ({
+          '@type': 'ListItem', position: i + 1, name: s.name, url: `${ORIGIN}/${s.slug}`,
+        })),
+      },
+    ],
+  };
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+${GA}
+    <title>${title}</title>
+    <meta name="description" content="${desc}">
+    <meta name="keywords" content="software development services, custom software, web development, android app development, crm cms, epos, inventory management, Nexofy Digital">
+    <meta name="author" content="Nexofy Digital">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0a0b0d">
+    <link rel="canonical" href="${url}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nexofy Digital">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${desc}">
+    <meta property="og:url" content="${url}">
+    <meta property="og:image" content="${ORIGIN}/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${desc}">
+    <meta name="twitter:image" content="${ORIGIN}/og-image.png">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    <link rel="stylesheet" href="/styles.css?v=${V}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+${JSON.stringify(jsonld, null, 2)}
+    </script>
+</head>
+<body>
+    <a href="#grid" class="skip-link">Skip to content</a>
+${NAV}
+
+    <main>
+    <section class="hero svc-hero">
+        <div class="hero-grid-lines" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="container">
+            <div class="hero-inner reveal">
+                <p class="eyebrow"><span class="pulse"></span>What we do</p>
+                <h1 class="hero-title">Everything we <span class="accent-text">build</span>.</h1>
+                <p class="hero-subtitle">Six things we're genuinely good at. Pick one, or hand us the whole stack — each is a system we've shipped to production and still maintain.</p>
+                <div class="hero-buttons">
+                    <a href="/#contact" class="btn btn-primary">Start a project</a>
+                    <a href="/#work" class="btn btn-ghost">See recent work<span class="arrow">→</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="grid" class="services section" style="padding-top:0">
+        <div class="container">
+            <div class="services-grid">
+                ${SERVICES.map((s, i) => `<article class="service-card reveal">
+                    <div class="service-index">${String(i + 1).padStart(2, '0')}</div>
+                    <div class="service-icon" aria-hidden="true">${icon(s.icon)}</div>
+                    <h3>${cardTitle(s)}</h3>
+                    <p>${s.lead}</p>
+                    <a class="service-more" href="/${s.slug}">Learn more<span class="arrow">→</span></a>
+                </article>`).join('\n                ')}
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+        <div class="container">
+            <div class="cta-band reveal">
+                <h2>Not sure which one you need?</h2>
+                <p>Tell us the problem in a sentence or two. We'll point you at the right fit — or tell you honestly if it's not us.</p>
+                <a href="/#contact" class="btn btn-primary">Start a project</a>
+            </div>
+        </div>
+    </section>
+    </main>
+${FOOTER}
+
+    <div class="grain" aria-hidden="true"></div>
+    <script src="/script.js?v=${V}"></script>
+</body>
+</html>
+`;
+}
 
 function page(s) {
   const url = `${ORIGIN}/${s.slug}`;
@@ -287,7 +405,7 @@ function page(s) {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${ORIGIN}/` },
-          { '@type': 'ListItem', position: 2, name: 'Services', item: `${ORIGIN}/#services` },
+          { '@type': 'ListItem', position: 2, name: 'Services', item: `${ORIGIN}/services` },
           { '@type': 'ListItem', position: 3, name: s.name, item: url },
         ],
       },
@@ -350,12 +468,12 @@ ${NAV}
         <div class="hero-glow" aria-hidden="true"></div>
         <div class="container">
             <div class="hero-inner reveal">
-                <p class="eyebrow breadcrumb"><a href="/#services">Services</a> · ${s.nav}</p>
+                <p class="eyebrow breadcrumb"><a href="/services">Services</a> · ${s.nav}</p>
                 <h1 class="hero-title">${s.name.replace(/ ([^ ]+)$/, ' <span class="accent-text">$1</span>')}</h1>
                 <p class="hero-subtitle">${s.lead}</p>
                 <div class="hero-buttons">
                     <a href="/#contact" class="btn btn-primary">Start a project</a>
-                    <a href="/#services" class="btn btn-ghost">All services<span class="arrow">→</span></a>
+                    <a href="/services" class="btn btn-ghost">All services<span class="arrow">→</span></a>
                 </div>
             </div>
         </div>
@@ -455,5 +573,7 @@ for (const s of SERVICES) {
   writeFileSync(out, page(s));
   console.log('wrote', `${s.slug}.html`);
 }
-console.log(`\n${SERVICES.length} service pages generated (v${V}).`);
+writeFileSync(resolve(ROOT, 'services.html'), hubPage());
+console.log('wrote services.html (hub)');
+console.log(`\n${SERVICES.length} service pages + 1 hub generated (v${V}).`);
 console.log('Slugs:', SERVICES.map((s) => '/' + s.slug).join('  '));

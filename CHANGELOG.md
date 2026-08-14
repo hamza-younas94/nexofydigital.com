@@ -2,6 +2,17 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.1.1] - 2026-08-14
+
+### Added
+- **`/services` hub page** listing all six services with cards, cross-links and its own
+  `BreadcrumbList` + `ItemList` JSON-LD. Added to `sitemap.xml` and linked from every
+  footer ("All services").
+
+### Changed
+- Service-page breadcrumbs and "All services" buttons now point to `/services` (a real
+  page) instead of the home `#services` anchor. Regenerated via `build/gen-services.mjs`.
+
 ## [2.1.0] - 2026-08-14
 
 ### Added
