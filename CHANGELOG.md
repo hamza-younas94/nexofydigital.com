@@ -2,6 +2,18 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.1.3] - 2026-08-14
+
+### Fixed
+- **Legal pages had a stale footer** with a dead `/#portfolio` link and none of the new
+  structure. Replaced all three (privacy/terms/data-deletion) with the standard footer
+  (service links, "All services", Studio/Legal columns, social links).
+- Legal-page nav "Services" pointed at the home `#services` anchor — now `/services`.
+- Made asset paths root-relative (`/styles.css`, `/favicon.svg`, `/script.js`) on the
+  home and legal pages so they resolve correctly at any URL depth.
+- Full internal-link audit across all 12 pages: 0 broken links. Disallowed the stray
+  `/responsive-test` dev page in robots.txt.
+
 ## [2.1.2] - 2026-08-14
 
 ### Changed

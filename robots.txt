@@ -7,5 +7,6 @@ Disallow: /smtp-config.php
 Disallow: /router.php
 Disallow: /vendor/
 Disallow: /cgi-bin/
+Disallow: /responsive-test
 
 Sitemap: https://nexofydigital.com/sitemap.xml
