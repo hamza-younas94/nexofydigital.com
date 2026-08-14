@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const V = '2.1.0'; // asset cache-bust version (keep in sync with styles.css/script.js)
+const V = '2.2.0'; // asset cache-bust version (keep in sync with styles.css/script.js)
 const ORIGIN = 'https://nexofydigital.com';
 
 const ICONS = {
@@ -503,7 +503,7 @@ ${NAV}
                 <h2>Made for teams that need it to just work.</h2>
             </header>
             <ol class="process-steps">
-                ${s.forWho.map((w, i) => `<li class="process-step reveal">
+                ${s.forWho.map((w, i) => `<li class="process-step">
                     <span class="step-num">${String(i + 1).padStart(2, '0')}</span>
                     <h3>${w[0]}</h3>
                     <p>${w[1]}</p>

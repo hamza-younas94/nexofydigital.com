@@ -63,6 +63,24 @@
     reveals.forEach((el) => ro.observe(el));
   }
 
+  /* ---- Step-by-step process reveal (fills one step at a time) ---- */
+  document.querySelectorAll('.process-steps').forEach((group) => {
+    const items = Array.from(group.querySelectorAll('.process-step'));
+    if (!items.length) return;
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach((it) => it.classList.add('step-in'));
+      return;
+    }
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        items.forEach((it, i) => setTimeout(() => it.classList.add('step-in'), i * 380));
+        obs.disconnect();
+      });
+    }, { threshold: 0.3 });
+    io.observe(group);
+  });
+
   /* ---- Cursor spotlight on service cards ---- */
   if (!reduce && window.matchMedia('(hover: hover)').matches) {
     document.querySelectorAll('.service-card').forEach((card) => {

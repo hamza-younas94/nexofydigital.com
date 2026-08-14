@@ -2,6 +2,18 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.2.0] - 2026-08-14
+
+### Added
+- **Step-by-step "How we work" animation.** The four process steps now reveal
+  sequentially on scroll — a lime progress rail fills across each step, the number
+  lights up and the text slides in, 380ms apart (1→2→3→4). Same treatment on the
+  service pages' "Who it's for" steps. Respects `prefers-reduced-motion` and degrades
+  gracefully without JS.
+
+### Changed
+- Asset cache-bust bumped to `?v=2.2.0`.
+
 ## [2.1.3] - 2026-08-14
 
 ### Fixed
