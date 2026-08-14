@@ -423,6 +423,68 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
     .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 
+/* ============================================================
+   Mobile enhancements (phones)
+   ============================================================ */
+/* never let big display text force a sideways scroll */
+h1, h2, h3, .hero-title, .section-header h2, .work-body h3 { overflow-wrap: break-word; }
+
+@media (max-width: 560px) {
+    /* Compact, icon-on-the-left service cards */
+    .services-grid { gap: 12px; }
+    .service-card {
+        display: grid; grid-template-columns: 44px 1fr; column-gap: 14px; align-items: center;
+        padding: 18px;
+    }
+    .service-card .service-icon { grid-column: 1; grid-row: 1; width: 44px; height: 44px; margin-bottom: 0; }
+    .service-card .service-icon svg { width: 20px; height: 20px; }
+    .service-card h3 { grid-column: 2; grid-row: 1; margin: 0; font-size: 1.08rem; }
+    .service-card p { grid-column: 1 / -1; margin-top: 12px; font-size: 0.95rem; }
+    .service-card .service-tags { grid-column: 1 / -1; margin-top: 14px; }
+    .service-card .service-more { grid-column: 1 / -1; margin-top: 14px; }
+    .service-index { display: none; } /* drop the decorative 01/02 on phones */
+    .service-card::before { display: none; } /* no cursor-spotlight on touch */
+
+    /* cross-links: icon stays left, tighter */
+    .svc-cross a { padding: 16px; }
+}
+
+@media (max-width: 480px) {
+    :root { --container: 100%; }
+    .container { padding: 0 18px; }
+    .section { padding: 56px 0 48px; }
+
+    .hero { padding: 116px 0 64px; }
+    .hero-title { font-size: clamp(2.15rem, 11vw, 2.75rem); line-height: 1.02; }
+    .hero-subtitle { font-size: 1.02rem; margin-top: 20px; }
+    .svc-hero .hero-title { font-size: clamp(1.95rem, 9.5vw, 2.5rem); }
+
+    /* full-width, stacked CTAs read cleaner on a phone */
+    .hero-buttons { flex-direction: column; align-items: stretch; gap: 12px; }
+    .hero-buttons .btn { width: 100%; }
+
+    .hero-stats { gap: 22px 18px; margin-top: 44px; }
+    .hero-stats .stat dt { font-size: 2rem; }
+
+    .section-header { margin-bottom: 32px; }
+    .section-header h2 { font-size: clamp(1.7rem, 7vw, 2.1rem); }
+
+    .work-item { padding: 26px 0; gap: 14px; }
+    .work-visual { width: 72px; height: 72px; }
+    .work-visual svg { width: 30px; height: 30px; }
+    .work-body h3 { font-size: 1.4rem; }
+
+    .process-steps { gap: 20px; }
+    .about-panel { padding: 24px; }
+    .panel-quote p { font-size: 1.04rem; }
+
+    .contact-form-wrapper { padding: 22px; }
+    .faq-q { padding: 16px 18px; font-size: 1rem; }
+    .faq-a { padding: 0 18px 18px; }
+    .cta-band { padding: 36px 22px; }
+    .cta-band .btn { width: 100%; }
+}
+
 /* Legacy class aliases so legal pages (privacy/terms/data-deletion)
    keep a consistent dark navbar + footer even though they carry their
    own inline light content styles. */

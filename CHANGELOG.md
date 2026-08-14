@@ -2,6 +2,20 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.3.0] - 2026-08-15
+
+### Added
+- **Mobile enhancement pass.** Service cards go compact on phones — icon on the left,
+  title beside it, description/tags/CTA full-width below; the decorative 01–06 index is
+  hidden and the cursor-spotlight is disabled on touch. Applied to home, the /services
+  hub and the service-page feature grids.
+- Phone-tuned hero (smaller display type, full-width stacked CTAs), tighter section
+  padding, smaller work visuals, and compact FAQ / CTA-band / about-panel spacing.
+- Global `overflow-wrap: break-word` guard on display headings.
+
+### Changed
+- Asset cache-bust bumped to `?v=2.3.0`.
+
 ## [2.2.1] - 2026-08-14
 
 ### Fixed
