@@ -2,6 +2,16 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.0.3] - 2026-08-14
+
+### Added
+- Google Analytics 4 (`gtag.js`, `G-3HV72B62E1`) on all pages.
+
+### Changed
+- CSP updated to allow GA: `script-src` gains `www.googletagmanager.com`; `connect-src`
+  gains `www.googletagmanager.com`, `www.google-analytics.com` and its regional
+  subdomains.
+
 ## [2.0.2] - 2026-08-14
 
 ### Added
