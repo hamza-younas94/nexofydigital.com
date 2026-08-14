@@ -2,6 +2,24 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.1.0] - 2026-08-14
+
+### Added
+- **Six per-service SEO landing pages** at clean, keyword-rich URLs:
+  `/web-application-development`, `/android-app-development`, `/crm-cms-development`,
+  `/epos-system`, `/restaurant-management-system`, `/inventory-management-software`.
+  Each has a unique title/description/keywords, hero, "what you get" grid, "who it's
+  for", tech tags, an FAQ accordion, a CTA band and cross-links to the other services.
+- Structured data per page: `Service` + `BreadcrumbList` + `FAQPage` JSON-LD.
+- `build/gen-services.mjs` — a dev-only static generator (content config + template)
+  that emits the six pages. The site stays fully static.
+- "Learn more" links on the home service cards, home footer now points to the real
+  service pages, and all six URLs added to `sitemap.xml`.
+
+### Changed
+- New service-page styles (FAQ, CTA band, cross-link grid) in `styles.css`; asset
+  cache-bust bumped to `?v=2.1.0`.
+
 ## [2.0.3] - 2026-08-14
 
 ### Added

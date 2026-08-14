@@ -216,6 +216,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .service-card p { color: var(--text-dim); font-size: 0.97rem; }
 .service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .service-tags li { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); border: 1px solid var(--line); border-radius: 6px; padding: 4px 9px; }
+.service-more { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text); border-bottom: 1px solid var(--line-strong); padding-bottom: 3px; position: relative; z-index: 2; transition: color 0.2s var(--ease), border-color 0.2s var(--ease); }
+.service-more:hover { color: var(--accent); border-color: var(--accent); }
+.service-more .arrow { transition: transform 0.2s var(--ease); }
+.service-more:hover .arrow { transform: translateX(3px); }
 
 /* ============================================================
    Work — asymmetric horizontal rows (not a card grid)
@@ -318,6 +322,39 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .social-links { display: flex; gap: 10px; }
 .social-links a { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 9px; border: 1px solid var(--line); color: var(--text-dim); transition: color 0.2s var(--ease), border-color 0.2s var(--ease), transform 0.2s var(--ease); }
 .social-links a:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+
+/* ============================================================
+   Service landing pages
+   ============================================================ */
+.svc-hero { padding: clamp(130px, 18vh, 190px) 0 clamp(56px, 8vw, 96px); }
+.svc-hero .hero-title { font-size: clamp(2.3rem, 6vw, 4.1rem); }
+.breadcrumb { text-transform: none; }
+.breadcrumb a { color: var(--text-dim); transition: color 0.2s var(--ease); }
+.breadcrumb a:hover { color: var(--accent); }
+
+.faq { display: grid; gap: 12px; max-width: 840px; }
+.faq-item { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; transition: border-color 0.25s var(--ease); }
+.faq-item[open] { border-color: var(--line-strong); background: var(--surface-2); }
+.faq-q { cursor: pointer; list-style: none; padding: 20px 24px; font-family: var(--font-display); font-weight: 500; font-size: 1.08rem; color: var(--text); display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q::after { content: "+"; color: var(--accent); font-size: 1.5rem; line-height: 1; transition: transform 0.25s var(--ease); }
+.faq-item[open] .faq-q::after { transform: rotate(45deg); }
+.faq-a { padding: 0 24px 22px; color: var(--text-dim); max-width: 72ch; }
+
+.cta-band { border: 1px solid var(--line); border-radius: var(--radius-lg); background: radial-gradient(120% 150% at 50% 0%, rgba(198, 242, 78, 0.08), transparent 60%), var(--surface); padding: clamp(40px, 6vw, 76px); text-align: center; }
+.cta-band h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 14px; }
+.cta-band p { color: var(--text-dim); max-width: 54ch; margin: 0 auto 26px; }
+
+.svc-cross { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.svc-cross a { display: flex; align-items: center; gap: 14px; padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--text); transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease); }
+.svc-cross a:hover { transform: translateY(-3px); border-color: var(--accent); background: var(--surface-2); }
+.svc-cross .ic { width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center; border-radius: 10px; background: var(--bg-elev); border: 1px solid var(--line); color: var(--accent); }
+.svc-cross .ic svg { width: 20px; height: 20px; }
+.svc-cross b { font-family: var(--font-display); font-weight: 500; font-size: 1.02rem; letter-spacing: -0.01em; }
+.svc-cross a .arrow { margin-left: auto; color: var(--text-faint); transition: transform 0.2s var(--ease), color 0.2s var(--ease); }
+.svc-cross a:hover .arrow { color: var(--accent); transform: translateX(3px); }
+@media (max-width: 960px) { .svc-cross { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 720px) { .svc-cross { grid-template-columns: 1fr; } }
 
 /* ============================================================
    Per-character blink sweep (logo + "Start a project" CTAs)
