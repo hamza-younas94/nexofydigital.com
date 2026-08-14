@@ -17,6 +17,27 @@ All notable changes to the Nexofy Digital site are documented here.
 - Bumped cache-bust asset version to `v=2.4.0` across all pages so the new CSS
   ships without a stale-stylesheet cache.
 
+## [2.5.0] - 2026-08-15
+
+### Changed
+- **Desktop revamp of the hero stats.** The 4 metrics were trapped inside the
+  900px hero text column — clustered on the left with a dead void to their right
+  and a large empty gap before the next section. They now render as a
+  **full-container-width metric band**: even 4-up grid with a top hairline and
+  vertical dividers between cells, larger mono figures. Moved `.hero-stats` out
+  of `.hero-inner` so it can span the full 1200px container.
+- Trimmed the hero's bottom padding (`clamp(80…130px)` → `clamp(56…88px)`) so the
+  new band isn't stranded above empty space on desktop.
+- Bumped cache-bust asset version to `v=2.5.0` across all pages.
+
+### CI
+- **Auto-deploy on push to `main`.** Added `.github/workflows/deploy.yml`
+  (appleboy/ssh-action) that SSHes into the Namecheap host and runs the existing
+  ff-only git-pull deploy, taking a timestamped backup first (keeps last 5). SSH
+  host/user/port/password live in repo Secrets. Manual runbook still valid as a
+  fallback. Remember to bump the `?v=` asset query on any CSS/JS change so
+  Cloudflare doesn't serve stale assets.
+
 ## [2.3.2] - 2026-08-15
 
 ### Changed
