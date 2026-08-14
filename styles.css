@@ -415,10 +415,35 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 
     .services-grid { grid-template-columns: 1fr; }
     .service-card.card-wide { grid-column: span 1; }
-    .work-item { grid-template-columns: 1fr; gap: 18px; padding: 32px 0; }
-    .work-visual { justify-self: start; }
+
+    /* Work rows become tight cards with a colored left accent — the big
+       decorative icon is dropped on phones (it only added dead space). */
+    .work-list { gap: 12px; }
+    .work-item {
+        display: block; padding: 16px 16px 16px 18px;
+        border: 1px solid var(--line); border-left: 3px solid var(--v, var(--accent));
+        border-radius: 12px; background: var(--surface);
+    }
+    .work-item:last-child { border-bottom: 1px solid var(--line); }
+    .work-item:hover { background: var(--surface-2); }
+    .work-meta { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 4px 8px; margin-bottom: 10px; }
+    .work-meta .work-year::before { content: "· "; color: var(--text-faint); }
+    .work-visual { display: none; } /* icon block removed on mobile */
+    .work-body h3 { margin-bottom: 6px; line-height: 1.15; }
+    .work-body p { font-size: 0.95rem; line-height: 1.5; }
+    .work-link { margin-top: 12px; }
+
     .process-steps { grid-template-columns: 1fr; gap: 24px; }
-    .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 26px 20px; }
+
+    /* Stats read as tiles, not bare numbers on black */
+    .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .hero-stats .stat {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+        padding: 18px 16px;
+    }
+    .hero-stats .stat dt { font-size: 2.1rem; }
+    .hero-stats .stat dd { font-size: 0.8rem; }
+
     .footer-content { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
@@ -475,16 +500,15 @@ h1, h2, h3, .hero-title, .section-header h2, .work-body h3 { overflow-wrap: brea
     .hero-buttons { flex-direction: column; align-items: stretch; gap: 12px; }
     .hero-buttons .btn { width: 100%; }
 
-    .hero-stats { gap: 22px 18px; margin-top: 44px; }
-    .hero-stats .stat dt { font-size: 2rem; }
+    .hero-stats { gap: 10px; margin-top: 40px; }
+    .hero-stats .stat { padding: 16px 14px; }
+    .hero-stats .stat dt { font-size: 1.95rem; }
 
     .section-header { margin-bottom: 32px; }
     .section-header h2 { font-size: clamp(1.7rem, 7vw, 2.1rem); }
 
-    .work-item { padding: 26px 0; gap: 14px; }
-    .work-visual { width: 72px; height: 72px; }
-    .work-visual svg { width: 30px; height: 30px; }
-    .work-body h3 { font-size: 1.4rem; }
+    .work-item { padding: 15px 15px 15px 17px; }
+    .work-body h3 { font-size: 1.3rem; }
 
     .process-steps { gap: 20px; }
     .about-panel { padding: 24px; }

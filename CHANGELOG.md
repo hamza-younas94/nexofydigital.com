@@ -2,6 +2,21 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.4.0] - 2026-08-15
+
+### Changed
+- **Mobile revamp of the Selected-work rows.** On phones each work row was a
+  full-width divider block with the decorative icon square stranded at the
+  bottom-left, leaving large dead gaps. Now each is a tight bordered card with a
+  colored left accent (per-project `--v` hue), inline `tag · year` meta, and
+  compact type. The icon block is dropped entirely on mobile — it only added
+  empty vertical space.
+- **Mobile revamp of the hero stats.** The 2×2 stat block was bare numbers on
+  black. They now render as bordered surface tiles (2-per-row), reading as a
+  deliberate metric grid instead of loose text.
+- Bumped cache-bust asset version to `v=2.4.0` across all pages so the new CSS
+  ships without a stale-stylesheet cache.
+
 ## [2.3.2] - 2026-08-15
 
 ### Changed
