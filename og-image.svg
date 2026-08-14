@@ -1,0 +1,26 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0a0b0d"/>
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity="0.05"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="#c6f24e" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#c6f24e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="400" fill="url(#glow)"/>
+
+  <g transform="translate(80, 84)">
+    <rect width="52" height="52" rx="13" fill="#c6f24e"/>
+    <path d="M14 40V12h3.6l16.8 17.8V12H38v28h-3.6L17.6 22.2V40H14Z" fill="#0c0f07"/>
+    <text x="70" y="36" font-family="'Space Grotesk', sans-serif" font-size="27" font-weight="700" fill="#e9ebef">Nexofy<tspan fill="#666e79" font-weight="500">Digital</tspan></text>
+  </g>
+
+  <text x="80" y="330" font-family="'Space Grotesk', sans-serif" font-size="82" font-weight="600" letter-spacing="-3" fill="#e9ebef">Custom software,</text>
+  <text x="80" y="420" font-family="'Space Grotesk', sans-serif" font-size="82" font-weight="600" letter-spacing="-3" fill="#e9ebef">built <tspan fill="#c6f24e">properly</tspan>.</text>
+
+  <text x="80" y="512" font-family="'JetBrains Mono', monospace" font-size="26" fill="#9aa2ad">Web apps · Android · CRM/CMS · ePOS · Inventory</text>
+  <text x="80" y="566" font-family="'JetBrains Mono', monospace" font-size="22" fill="#666e79">nexofydigital.com</text>
+</svg>

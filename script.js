@@ -1,385 +1,163 @@
-// Mobile Menu Toggle
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const navMenu = document.querySelector('.nav-menu');
+/* ============================================================
+   Nexofy Digital — interactions
+   ============================================================ */
+(function () {
+  'use strict';
 
-if (mobileMenuToggle && navMenu) {
-mobileMenuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    mobileMenuToggle.classList.toggle('active');
-});
+  /* ---- Navbar: shadow/border on scroll ---- */
+  const navbar = document.getElementById('navbar');
+  const onScroll = () => {
+    if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
 
-// Close mobile menu when clicking a link
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
-    });
-});
-}
-
-// Navbar scroll effect
-const navbar = document.querySelector('.navbar');
-
-if (navbar) {
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-    
-    lastScroll = currentScroll;
-});
-}
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        
-        if (target) {
-            e.preventDefault();
-            const navbar = document.querySelector('.navbar');
-            const navbarHeight = navbar ? navbar.offsetHeight : 0;
-            const targetPosition = target.offsetTop - navbarHeight;
-            
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Contact Form Handling with Professional Validation
-const contactForm = document.getElementById('contactForm');
-
-// Only initialize form validation if form exists
-if (contactForm) {
-// Validation functions
-const validators = {
-    name: (value) => {
-        if (!value || value.trim().length < 2) {
-            return 'Name must be at least 2 characters long';
-        }
-        if (!/^[a-zA-Z\s'-]+$/.test(value)) {
-            return 'Name can only contain letters, spaces, hyphens and apostrophes';
-        }
-        return '';
-    },
-    
-    email: (value) => {
-        if (!value || value.trim().length === 0) {
-            return 'Email address is required';
-        }
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(value)) {
-            return 'Please enter a valid email address';
-        }
-        return '';
-    },
-    
-    service: (value) => {
-        if (!value || value === '') {
-            return 'Please select a service';
-        }
-        return '';
-    },
-    
-    message: (value) => {
-        if (!value || value.trim().length < 10) {
-            return 'Message must be at least 10 characters long';
-        }
-        if (value.trim().length > 1000) {
-            return 'Message must not exceed 1000 characters';
-        }
-        return '';
-    }
-};
-
-// Show error message
-function showError(fieldId, message) {
-    const errorElement = document.getElementById(`${fieldId}Error`);
-    const inputElement = document.getElementById(fieldId);
-    
-    if (errorElement && inputElement) {
-        errorElement.textContent = message;
-        errorElement.style.display = message ? 'block' : 'none';
-        inputElement.classList.toggle('error', !!message);
-        inputElement.classList.remove('success');
-    }
-}
-
-// Show success state
-function showSuccess(fieldId) {
-    const errorElement = document.getElementById(`${fieldId}Error`);
-    const inputElement = document.getElementById(fieldId);
-    
-    if (errorElement && inputElement) {
-        errorElement.style.display = 'none';
-        inputElement.classList.remove('error');
-        inputElement.classList.add('success');
-    }
-}
-
-// Clear all errors
-function clearAllErrors() {
-    ['name', 'email', 'service', 'message'].forEach(field => {
-        const errorElement = document.getElementById(`${field}Error`);
-        const inputElement = document.getElementById(field);
-        if (errorElement) errorElement.style.display = 'none';
-        if (inputElement) {
-            inputElement.classList.remove('error', 'success');
-        }
-    });
-}
-
-// Validate single field
-function validateField(fieldId, value) {
-    const error = validators[fieldId](value);
-    if (error) {
-        showError(fieldId, error);
-        return false;
-    } else {
-        showSuccess(fieldId);
-        return true;
-    }
-}
-
-// Add real-time validation
-['name', 'email', 'service', 'message'].forEach(field => {
-    const element = document.getElementById(field);
-    if (element) {
-        // Validate on blur
-        element.addEventListener('blur', () => {
-            validateField(field, element.value);
-        });
-        
-        // Clear error on input
-        element.addEventListener('input', () => {
-            if (element.classList.contains('error')) {
-                const error = validators[field](element.value);
-                if (!error) {
-                    showSuccess(field);
-                }
-            }
-        });
-    }
-});
-
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        service: document.getElementById('service').value,
-        message: document.getElementById('message').value
+  /* ---- Mobile menu ---- */
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const menu = document.querySelector('.nav-menu');
+  if (toggle && menu) {
+    const setOpen = (open) => {
+      menu.classList.toggle('open', open);
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
     };
-    
-    // Validate all fields
-    let isValid = true;
-    Object.keys(formData).forEach(field => {
-        if (!validateField(field, formData[field])) {
-            isValid = false;
-        }
+    toggle.addEventListener('click', () => setOpen(!menu.classList.contains('open')));
+    menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+  }
+
+  /* ---- Active nav link while scrolling ---- */
+  const navLinks = Array.from(document.querySelectorAll('.nav-menu a[href^="#"]'));
+  const sections = navLinks
+    .map((a) => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+  if (sections.length) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        navLinks.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach((s) => spy.observe(s));
+  }
+
+  /* ---- Staggered scroll reveal ---- */
+  const reveals = Array.from(document.querySelectorAll('.reveal'));
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    reveals.forEach((el) => el.classList.add('in'));
+  } else {
+    const ro = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const group = Array.from(entry.target.parentElement
+          ? entry.target.parentElement.querySelectorAll(':scope > .reveal')
+          : [entry.target]);
+        const idx = Math.max(0, group.indexOf(entry.target));
+        entry.target.style.transitionDelay = Math.min(idx * 80, 320) + 'ms';
+        entry.target.classList.add('in');
+        obs.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+    reveals.forEach((el) => ro.observe(el));
+  }
+
+  /* ---- Cursor spotlight on service cards ---- */
+  if (!reduce && window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.service-card').forEach((card) => {
+      card.addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
     });
-    
-    if (!isValid) {
-        // Scroll to first error
-        const firstError = contactForm.querySelector('.error');
-        if (firstError) {
-            firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            firstError.focus();
-        }
-        return;
-    }
-    
-    // Show loading state
-    const submitButton = contactForm.querySelector('button[type="submit"]');
-    const btnText = submitButton.querySelector('.btn-text');
-    const btnLoading = submitButton.querySelector('.btn-loading');
-    
-    btnText.style.display = 'none';
-    btnLoading.style.display = 'flex';
-    submitButton.disabled = true;
-    submitButton.classList.add('loading');
-    
-    // Remove any existing messages
-    const existingMessage = contactForm.querySelector('.form-success, .form-error');
-    if (existingMessage) {
-        existingMessage.remove();
-    }
-    
+  }
+
+  /* ---- Contact form ---- */
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const fields = {
+    name: document.getElementById('name'),
+    email: document.getElementById('email'),
+    service: document.getElementById('service'),
+    message: document.getElementById('message'),
+  };
+  const statusEl = document.getElementById('formStatus');
+  const btn = form.querySelector('button[type="submit"]');
+  const btnText = form.querySelector('.btn-text');
+  const btnLoading = form.querySelector('.btn-loading');
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const setError = (key, msg) => {
+    const err = document.getElementById(key + 'Error');
+    if (err) err.textContent = msg || '';
+    if (fields[key]) fields[key].closest('.form-group').classList.toggle('invalid', Boolean(msg));
+  };
+
+  const validate = () => {
+    let ok = true;
+    if (!fields.name.value.trim()) { setError('name', 'Please tell us your name.'); ok = false; }
+    else setError('name', '');
+
+    if (!fields.email.value.trim()) { setError('email', 'We need an email to reply.'); ok = false; }
+    else if (!emailRe.test(fields.email.value.trim())) { setError('email', 'That email doesn’t look right.'); ok = false; }
+    else setError('email', '');
+
+    if (!fields.service.value) { setError('service', 'Pick what you need.'); ok = false; }
+    else setError('service', '');
+
+    if (fields.message.value.trim().length < 10) { setError('message', 'A little more detail helps — 10 characters or so.'); ok = false; }
+    else setError('message', '');
+
+    return ok;
+  };
+
+  Object.entries(fields).forEach(([key, el]) => {
+    el.addEventListener('input', () => { if (el.closest('.form-group').classList.contains('invalid')) setError(key, ''); });
+  });
+
+  const loading = (on) => {
+    btn.disabled = on;
+    if (btnText) btnText.hidden = on;
+    if (btnLoading) btnLoading.hidden = !on;
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    statusEl.textContent = '';
+    statusEl.className = 'form-status';
+    if (!validate()) return;
+
+    loading(true);
+    const payload = {
+      name: fields.name.value.trim(),
+      email: fields.email.value.trim(),
+      service: fields.service.value,
+      message: fields.message.value.trim(),
+    };
+
     try {
-        // Send data to PHP backend
-        const response = await fetch('contact.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData)
-        });
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            // Show success message
-            const successMessage = document.createElement('div');
-            successMessage.className = 'form-success';
-            successMessage.innerHTML = `
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>${result.message}</span>
-            `;
-            contactForm.insertBefore(successMessage, contactForm.firstChild);
-            
-            // Reset form and clear validation states
-            contactForm.reset();
-            clearAllErrors();
-            
-            // Remove success message after 5 seconds
-            setTimeout(() => {
-                successMessage.remove();
-            }, 5000);
-        } else {
-            throw new Error(result.message);
-        }
-        
-    } catch (error) {
-        // Show error message
-        const errorMessage = document.createElement('div');
-        errorMessage.className = 'form-error';
-        errorMessage.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="15" y1="9" x2="9" y2="15"></line>
-                <line x1="9" y1="9" x2="15" y2="15"></line>
-            </svg>
-            <span>${error.message || 'Something went wrong. Please try again or email us at projects@nexofydigital.com'}</span>
-        `;
-        contactForm.insertBefore(errorMessage, contactForm.firstChild);
-        
-        // console.error('Form submission error:', error);
+      const res = await fetch('contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success !== false) {
+        form.reset();
+        statusEl.textContent = data.message || 'Thanks — your message is in. We’ll reply within a day.';
+        statusEl.classList.add('success');
+      } else {
+        statusEl.textContent = data.message || 'Something went wrong sending that. Email projects@nexofydigital.com and we’ll pick it up.';
+        statusEl.classList.add('error');
+      }
+    } catch (err) {
+      statusEl.textContent = 'Connection failed. Please try again, or email projects@nexofydigital.com.';
+      statusEl.classList.add('error');
     } finally {
-        // Reset button state
-        btnText.style.display = 'inline';
-        btnLoading.style.display = 'none';
-        submitButton.disabled = false;
-        submitButton.classList.remove('loading');
+      loading(false);
     }
-});
-
-} // End of contactForm check
-
-// Intersection Observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe elements for animation
-document.querySelectorAll('.service-card, .portfolio-card, .about-text, .contact-form-wrapper').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
-
-// Stats counter animation
-const animateCounter = (element, target) => {
-    let current = 0;
-    const increment = target / 50;
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(current);
-        }
-    }, 30);
-};
-
-// Observe stats section
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const stats = entry.target.querySelectorAll('.stat h3');
-            stats.forEach(stat => {
-                const target = stat.textContent;
-                if (!isNaN(target)) {
-                    animateCounter(stat, parseInt(target));
-                }
-            });
-            statsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) {
-    statsObserver.observe(heroStats);
-}
-
-// Add active state to navigation based on scroll position
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-menu a');
-
-if (sections.length > 0 && navLinks.length > 0) {
-window.addEventListener('scroll', () => {
-    let current = '';
-    const navbar = document.querySelector('.navbar');
-    const navbarOffset = navbar ? navbar.offsetHeight : 0;
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= sectionTop - navbarOffset - 100) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-}
-
-// Add parallax effect to hero section
-const heroElement = document.querySelector('.hero');
-if (heroElement) {
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    if (scrolled < heroElement.offsetHeight) {
-        heroElement.style.transform = `translateY(${scrolled * 0.4}px)`;
-    }
-});
-}
-
-// Console branding (disabled for production)
-// console.log('%c🚀 Nexofy Digital', 'color: #6366f1; font-size: 24px; font-weight: bold;');
-// console.log('%c✨ Professional Digital Solutions', 'color: #8b5cf6; font-size: 14px; font-weight: 600;');
-// console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #e5e7eb;');
-// console.log('%c✅ Website loaded successfully', 'color: #10b981; font-size: 12px;');
-// console.log('%c📧 Contact form: Active with rate limiting', 'color: #6366f1; font-size: 12px;');
-// console.log('%c🔒 Security: Domain restricted & spam protected', 'color: #8b5cf6; font-size: 12px;');
-// console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #e5e7eb;');
+  });
+})();

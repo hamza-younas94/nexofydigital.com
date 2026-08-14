@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <meta name="theme-color" content="#0a0b0d">
+
     <link rel="stylesheet" href="styles.css">
     <style>
         .privacy-container {
@@ -109,17 +113,16 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <div class="logo">
-                    <a href="/">
-                        <img src="logo-full.svg" alt="Nexofy Digital" height="40">
-                    </a>
-                </div>
+                <a href="/" class="logo" aria-label="Nexofy Digital home">
+                    <span class="logo-mark" aria-hidden="true">N</span>
+                    <span class="logo-word">Nexofy<span class="logo-dim">Digital</span></span>
+                </a>
                 <ul class="nav-menu">
-                    <li><a href="/#home">Home</a></li>
                     <li><a href="/#services">Services</a></li>
-                    <li><a href="/#portfolio">Portfolio</a></li>
+                    <li><a href="/#work">Work</a></li>
+                    <li><a href="/#process">Process</a></li>
                     <li><a href="/#about">About</a></li>
-                    <li><a href="/#contact">Contact</a></li>
+                    <li><a href="/#contact" class="nav-cta">Start a project</a></li>
                 </ul>
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">
                     <span></span>

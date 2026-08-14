@@ -3,32 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nexofy Digital - Custom Web Apps, Android Apps, CRM/CMS Solutions, ePOS Systems, Restaurant Management, and Inventory Management">
-    <meta name="keywords" content="web development, android apps, CRM, CMS, ePOS, restaurant management, inventory management">
-    <title>Nexofy Digital - Custom Digital Solutions</title>
+    <title>Nexofy Digital — Custom software, built properly</title>
+    <meta name="description" content="Nexofy Digital designs and builds custom web apps, Android apps, CRM/CMS platforms, ePOS and inventory systems for restaurants, retail and growing businesses.">
+    <meta name="keywords" content="web development, android apps, CRM, CMS, ePOS, restaurant management, inventory management, software studio">
+    <meta name="theme-color" content="#0a0b0d">
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nexofy Digital — Custom software, built properly">
+    <meta property="og:description" content="A small software studio that ships. Web apps, Android apps, CRM/CMS, ePOS and inventory systems.">
+    <meta property="og:url" content="https://nexofydigital.com/">
+    <meta property="og:image" content="https://nexofydigital.com/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#services" class="skip-link">Skip to content</a>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <div class="logo">
-                    <a href="/">
-                        <img src="logo-full.svg" alt="Nexofy Digital" height="40">
-                    </a>
-                </div>
+                <a href="/" class="logo" aria-label="Nexofy Digital home">
+                    <span class="logo-mark" aria-hidden="true">N</span>
+                    <span class="logo-word">Nexofy<span class="logo-dim">Digital</span></span>
+                </a>
                 <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#process">Process</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="nav-cta">Start a project</a></li>
                 </ul>
-                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -37,395 +49,345 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <main>
+    <!-- Hero -->
     <section id="home" class="hero">
-        <div class="hero-particles"></div>
-        <div class="hero-mesh-gradient"></div>
+        <div class="hero-grid-lines" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <span>Trusted by 50+ businesses worldwide</span>
-                </div>
+            <div class="hero-inner reveal">
+                <p class="eyebrow"><span class="pulse"></span>Software studio · Karachi → worldwide</p>
                 <h1 class="hero-title">
-                    Transform Your Business with 
-                    <span class="gradient-text">Custom Digital Solutions</span>
+                    Custom software,<br>
+                    built <span class="accent-text">properly</span>.
                 </h1>
                 <p class="hero-subtitle">
-                    We build cutting-edge web applications, mobile apps, and enterprise systems 
-                    that drive growth and efficiency for businesses of all sizes.
+                    We're a small team that designs and ships web apps, Android apps and the systems
+                    that run real businesses — point of sale, inventory, CRM. No bloat, no hand-off
+                    black holes. You talk to the people writing the code.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get Started</a>
-                    <a href="#services" class="btn btn-secondary">View Services</a>
+                    <a href="#contact" class="btn btn-primary">Start a project</a>
+                    <a href="#work" class="btn btn-ghost">See recent work<span class="arrow">→</span></a>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <h3>100+</h3>
-                        <p>Projects</p>
-                    </div>
-                    <div class="stat">
-                        <h3>50+</h3>
-                        <p>Clients</p>
-                    </div>
-                    <div class="stat">
-                        <h3>100%</h3>
-                        <p>Satisfaction</p>
-                    </div>
-                    <div class="stat">
-                        <h3>24/7</h3>
-                        <p>Support</p>
-                    </div>
-                </div>
+                <dl class="hero-stats">
+                    <div class="stat"><dt>120<span class="unit">+</span></dt><dd>Projects shipped</dd></div>
+                    <div class="stat"><dt>50<span class="unit">+</span></dt><dd>Clients served</dd></div>
+                    <div class="stat"><dt>6<span class="unit">yrs</span></dt><dd>Building software</dd></div>
+                    <div class="stat"><dt>4</dt><dd>Countries deployed</dd></div>
+                </dl>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- Services -->
+    <section id="services" class="services section">
         <div class="container">
-            <div class="section-header">
-                <h2>Our Services</h2>
-                <p>Comprehensive digital solutions tailored to your business needs</p>
-            </div>
+            <header class="section-header reveal">
+                <p class="eyebrow">What we do</p>
+                <h2>Six things we're genuinely good at.</h2>
+                <p class="section-lead">Pick one, or hand us the whole build. Each of these is a system we've shipped to production and still maintain.</p>
+            </header>
+
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                            <line x1="8" y1="21" x2="16" y2="21"></line>
-                            <line x1="12" y1="17" x2="12" y2="21"></line>
-                        </svg>
+                <article class="service-card card-lg reveal" data-tilt>
+                    <div class="service-index">01</div>
+                    <div class="service-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
                     </div>
-                    <h3>Custom Web Applications</h3>
-                    <p>Scalable, responsive web applications built with modern technologies. From simple websites to complex enterprise solutions.</p>
-                </div>
+                    <h3>Custom web applications</h3>
+                    <p>Dashboards, portals and internal tools that stay fast as they grow. Built on modern stacks, tested, and handed over with docs — not a mystery box.</p>
+                    <ul class="service-tags"><li>React / Next</li><li>Node · Go · PHP</li><li>Postgres</li></ul>
+                </article>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                        </svg>
+                <article class="service-card reveal" data-tilt>
+                    <div class="service-index">02</div>
+                    <div class="service-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
                     </div>
-                    <h3>Android App Development</h3>
-                    <p>Native and cross-platform Android applications with seamless user experiences and robust performance.</p>
-                </div>
+                    <h3>Android apps</h3>
+                    <p>Native Kotlin and cross-platform builds that feel right on the device and behave offline.</p>
+                </article>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
+                <article class="service-card reveal" data-tilt>
+                    <div class="service-index">03</div>
+                    <div class="service-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
                     </div>
-                    <h3>CRM & CMS Systems</h3>
-                    <p>Custom customer relationship management and content management systems to streamline your operations.</p>
-                </div>
+                    <h3>CRM &amp; CMS platforms</h3>
+                    <p>Customer, sales and content systems shaped around how your team actually works.</p>
+                </article>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                            <line x1="1" y1="10" x2="23" y2="10"></line>
-                        </svg>
+                <article class="service-card reveal" data-tilt>
+                    <div class="service-index">04</div>
+                    <div class="service-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
                     </div>
-                    <h3>ePOS Solutions</h3>
-                    <p>Modern point-of-sale systems with inventory management, sales tracking, and comprehensive reporting.</p>
-                </div>
+                    <h3>ePOS solutions</h3>
+                    <p>Point of sale with live inventory, receipts and reporting — for one counter or fifty.</p>
+                </article>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                        </svg>
+                <article class="service-card reveal" data-tilt>
+                    <div class="service-index">05</div>
+                    <div class="service-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
                     </div>
-                    <h3>Restaurant Management</h3>
-                    <p>Complete restaurant management systems including order management, kitchen displays, and table reservations.</p>
-                </div>
+                    <h3>Restaurant management</h3>
+                    <p>Orders, kitchen displays, tables and menus — the whole floor in one screen.</p>
+                </article>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                        </svg>
+                <article class="service-card card-wide reveal" data-tilt>
+                    <div class="service-index">06</div>
+                    <div class="service-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg>
                     </div>
-                    <h3>Inventory Management</h3>
-                    <p>Smart inventory tracking systems for hardware shops, retail stores, and warehouses with real-time updates.</p>
-                </div>
+                    <h3>Inventory management</h3>
+                    <p>Real-time stock for hardware shops, retail and warehouses — barcode in, low-stock alerts out, numbers you can trust at close.</p>
+                    <ul class="service-tags"><li>Barcode / SKU</li><li>Multi-location</li><li>Live sync</li></ul>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
+    <!-- Work -->
+    <section id="work" class="work section">
         <div class="container">
-            <div class="section-header">
-                <h2>Our Work</h2>
-                <p>Check out some of our recent projects</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                            </svg>
-                        </div>
+            <header class="section-header reveal">
+                <p class="eyebrow">Selected work</p>
+                <h2>A few things we've put into the world.</h2>
+            </header>
+
+            <div class="work-list">
+                <article class="work-item reveal">
+                    <div class="work-meta">
+                        <span class="work-tag">Live · Web app</span>
+                        <span class="work-year">2026</span>
                     </div>
-                    <div class="portfolio-info">
+                    <div class="work-body">
                         <h3>Expense Track</h3>
-                        <p>A comprehensive expense tracking application for managing personal and business finances.</p>
-                        <a href="https://expensetrack.nexofydigital.com/" target="_blank" class="btn btn-small">View Project →</a>
+                        <p>A full expense and budgeting platform for individuals and small businesses — categorised spend, receipts, inventory and reports. React front end, Express API, Postgres. In production and used daily.</p>
+                        <a href="https://expensetrack.nexofydigital.com/" target="_blank" rel="noopener" class="work-link">Visit the live app<span class="arrow">→</span></a>
                     </div>
-                </div>
+                    <div class="work-visual" style="--v:#c6f24e" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
+                    </div>
+                </article>
 
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                                <line x1="1" y1="10" x2="23" y2="10"></line>
-                            </svg>
-                        </div>
+                <article class="work-item reveal">
+                    <div class="work-meta">
+                        <span class="work-tag">Product · ePOS</span>
+                        <span class="work-year">2025</span>
                     </div>
-                    <div class="portfolio-info">
-                        <h3>ePOS System</h3>
-                        <p>Modern point-of-sale solution with inventory management and analytics for retail businesses.</p>
-                        <a href="#contact" class="btn btn-small">Learn More →</a>
+                    <div class="work-body">
+                        <h3>Counter — retail ePOS</h3>
+                        <p>Point-of-sale with live inventory, split payments and end-of-day reporting. Runs on a tablet at the counter and a back office on the web, sharing one source of truth.</p>
+                        <a href="#contact" class="work-link">Ask for a walkthrough<span class="arrow">→</span></a>
                     </div>
-                </div>
+                    <div class="work-visual" style="--v:#7cc4ff" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 9h20M6 18v3M18 18v3"/></svg>
+                    </div>
+                </article>
 
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                        </div>
+                <article class="work-item reveal">
+                    <div class="work-meta">
+                        <span class="work-tag">Product · Restaurant</span>
+                        <span class="work-year">2025</span>
                     </div>
-                    <div class="portfolio-info">
-                        <h3>Restaurant Manager</h3>
-                        <p>Complete restaurant management system with order tracking and kitchen display integration.</p>
-                        <a href="#contact" class="btn btn-small">Learn More →</a>
+                    <div class="work-body">
+                        <h3>Service — restaurant OS</h3>
+                        <p>Orders flow from table to kitchen display without paper. Menus, modifiers, tables and staff shifts in one system, built for a floor that doesn't stop moving.</p>
+                        <a href="#contact" class="work-link">Ask for a walkthrough<span class="arrow">→</span></a>
                     </div>
-                </div>
+                    <div class="work-visual" style="--v:#ffb27c" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M3 2v7a3 3 0 0 0 6 0V2M6 9v13M18 2c-2 0-3 2-3 5s1 4 3 4v11"/></svg>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Process -->
+    <section id="process" class="process section">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Nexofy Digital</h2>
-                    <p>
-                        We are a team of passionate developers and designers dedicated to creating innovative 
-                        digital solutions that help businesses thrive in the modern world. With years of experience 
-                        in software development, we specialize in building custom applications that are tailored 
-                        to your specific needs.
-                    </p>
-                    <p>
-                        Our mission is to transform your ideas into reality with cutting-edge technology, 
-                        exceptional design, and unparalleled support. We work closely with our clients to 
-                        understand their goals and deliver solutions that exceed expectations.
-                    </p>
-                    <div class="about-features">
-                        <div class="feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Expert Development Team</span>
-                        </div>
-                        <div class="feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Agile Development Process</span>
-                        </div>
-                        <div class="feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Ongoing Support & Maintenance</span>
-                        </div>
-                        <div class="feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Competitive Pricing</span>
-                        </div>
-                    </div>
+            <header class="section-header reveal">
+                <p class="eyebrow">How we work</p>
+                <h2>Four steps, no surprises.</h2>
+            </header>
+            <ol class="process-steps">
+                <li class="process-step reveal">
+                    <span class="step-num">01</span>
+                    <h3>Scope</h3>
+                    <p>We map the problem before touching code — what it does, who uses it, what "done" means. You get a fixed plan and a real number.</p>
+                </li>
+                <li class="process-step reveal">
+                    <span class="step-num">02</span>
+                    <h3>Build in the open</h3>
+                    <p>Short cycles with something you can click at the end of each one. You watch it take shape instead of waiting for a reveal.</p>
+                </li>
+                <li class="process-step reveal">
+                    <span class="step-num">03</span>
+                    <h3>Ship &amp; hand over</h3>
+                    <p>Deployed, documented, and yours. We set up the servers, the pipeline and the access — no lock-in.</p>
+                </li>
+                <li class="process-step reveal">
+                    <span class="step-num">04</span>
+                    <h3>Stick around</h3>
+                    <p>Software isn't finished when it launches. We stay on for fixes, changes and the next version.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p class="eyebrow">Who we are</p>
+                    <h2>A studio small enough to care, sharp enough to ship.</h2>
+                    <p>Nexofy Digital is a compact team of engineers and designers. We take on a limited number of builds at a time so each one gets real attention — the person scoping your project is the person writing its code.</p>
+                    <p>We've built for restaurants, retailers, hardware shops and finance teams across four countries. Different industries, same standard: software that's fast, honest about its trade-offs, and easy to hand to the next developer.</p>
+                    <ul class="about-features">
+                        <li><span class="tick" aria-hidden="true">✦</span>You work with the builders, not a middle layer</li>
+                        <li><span class="tick" aria-hidden="true">✦</span>Fixed scope, fixed price, no drift</li>
+                        <li><span class="tick" aria-hidden="true">✦</span>Code you own, documented and deployable</li>
+                        <li><span class="tick" aria-hidden="true">✦</span>Support that answers after launch</li>
+                    </ul>
                 </div>
-                <div class="about-image">
-                    <div class="placeholder-about-image">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                            <polyline points="2 17 12 22 22 17"></polyline>
-                            <polyline points="2 12 12 17 22 12"></polyline>
-                        </svg>
+                <aside class="about-panel reveal">
+                    <div class="panel-row"><span>Based in</span><b>Karachi, PK</b></div>
+                    <div class="panel-row"><span>Working</span><b>Remote · worldwide</b></div>
+                    <div class="panel-row"><span>Response time</span><b>Under 24h</b></div>
+                    <div class="panel-row"><span>Engagements</span><b>Fixed &amp; retainer</b></div>
+                    <div class="panel-quote">
+                        <p>“They scoped it in a call, shipped it in weeks, and still pick up the phone.”</p>
+                        <span>— a client who'd rather stay off a testimonial carousel</span>
                     </div>
-                </div>
+                </aside>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Contact -->
+    <section id="contact" class="contact section">
         <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p>Ready to start your project? Let's discuss how we can help</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-form-wrapper">
+            <div class="contact-grid">
+                <div class="contact-intro reveal">
+                    <p class="eyebrow">Start a project</p>
+                    <h2>Tell us what you're building.</h2>
+                    <p class="section-lead">A sentence or two is enough to start. We'll reply within a day with questions or a call.</p>
+                    <ul class="contact-info">
+                        <li>
+                            <span class="ci-label">Email</span>
+                            <a href="mailto:projects@nexofydigital.com">projects@nexofydigital.com</a>
+                        </li>
+                        <li>
+                            <span class="ci-label">Phone / WhatsApp</span>
+                            <a href="tel:+923462115115">+92 346 2115115</a>
+                        </li>
+                        <li>
+                            <span class="ci-label">Hours</span>
+                            <span>Mon–Fri · 9:00–18:00 PKT</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contact-form-wrapper reveal">
                     <form id="contactForm" class="contact-form" novalidate>
                         <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" placeholder="John Doe">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name">
                             <span class="error-message" id="nameError"></span>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" placeholder="john@example.com">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" autocomplete="email" placeholder="you@company.com">
                             <span class="error-message" id="emailError"></span>
                         </div>
                         <div class="form-group">
-                            <label for="service">Service Interested In *</label>
+                            <label for="service">What do you need?</label>
                             <select id="service" name="service">
                                 <option value="">Select a service</option>
-                                <option value="web-app">Custom Web Application</option>
-                                <option value="android-app">Android App Development</option>
-                                <option value="crm-cms">CRM/CMS System</option>
-                                <option value="epos">ePOS Solution</option>
-                                <option value="restaurant">Restaurant Management</option>
-                                <option value="inventory">Inventory Management</option>
-                                <option value="other">Other</option>
+                                <option value="web-app">Custom web application</option>
+                                <option value="android-app">Android app</option>
+                                <option value="crm-cms">CRM / CMS platform</option>
+                                <option value="epos">ePOS solution</option>
+                                <option value="restaurant">Restaurant management</option>
+                                <option value="inventory">Inventory management</option>
+                                <option value="other">Something else</option>
                             </select>
                             <span class="error-message" id="serviceError"></span>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..."></textarea>
+                            <label for="message">Project details</label>
+                            <textarea id="message" name="message" rows="5" placeholder="What are you building, and what's the rough timeline?"></textarea>
                             <span class="error-message" id="messageError"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary">
-                            <span class="btn-text">Send Message</span>
-                            <span class="btn-loading" style="display: none;">
-                                <svg class="spinner" viewBox="0 0 50 50">
-                                    <circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="5"></circle>
-                                </svg>
-                                Sending...
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span class="btn-text">Send message</span>
+                            <span class="btn-loading" hidden>
+                                <svg class="spinner" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="5"></circle></svg>
+                                Sending…
                             </span>
                         </button>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
                     </form>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-info-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@nexofydigital.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                        </svg>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+923462115115</p>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
-                        <div>
-                            <h4>Business Hours</h4>
-                            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Nexofy<span class="accent">Digital</span></h3>
-                    <p>Transforming ideas into innovative digital solutions.</p>
+                <div class="footer-section footer-brand">
+                    <a href="/" class="logo" aria-label="Nexofy Digital home">
+                        <span class="logo-mark" aria-hidden="true">N</span>
+                        <span class="logo-word">Nexofy<span class="logo-dim">Digital</span></span>
+                    </a>
+                    <p>A software studio that ships. Web, mobile and the systems that run real businesses.</p>
+                    <a href="#contact" class="btn btn-ghost btn-sm">Start a project<span class="arrow">→</span></a>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="#services">Web Applications</a></li>
-                        <li><a href="#services">Android Apps</a></li>
-                        <li><a href="#services">CRM/CMS Systems</a></li>
-                        <li><a href="#services">ePOS Solutions</a></li>
+                        <li><a href="#services">Web applications</a></li>
+                        <li><a href="#services">Android apps</a></li>
+                        <li><a href="#services">CRM / CMS</a></li>
+                        <li><a href="#services">ePOS &amp; inventory</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Company</h4>
+                    <h4>Studio</h4>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="/privacy">Privacy Policy</a></li>
-                        <li><a href="/terms">Terms of Service</a></li>
-                        <li><a href="/data-deletion">Data Deletion</a></li>
+                        <li><a href="/privacy">Privacy policy</a></li>
+                        <li><a href="/terms">Terms of service</a></li>
+                        <li><a href="/data-deletion">Data deletion</a></li>
                     </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="Twitter">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="GitHub">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
-                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Nexofy Digital. All rights reserved.</p>
+                <p>© 2026 Nexofy Digital. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                    <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <div class="grain" aria-hidden="true"></div>
     <script src="script.js"></script>
 </body>
 </html>
