@@ -2,6 +2,14 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.3.2] - 2026-08-15
+
+### Changed
+- **Mobile footer revamp.** On phones the footer collapsed into one tall stacked
+  column. Now: brand block full-width on top, the Services/Studio/Legal link lists in a
+  compact 2-column grid, bigger tap targets, full-width CTA, and a tidier stacked
+  bottom bar (social above copyright). Footer height roughly halved.
+
 ## [2.3.1] - 2026-08-15
 
 ### Fixed

@@ -447,6 +447,18 @@ h1, h2, h3, .hero-title, .section-header h2, .work-body h3 { overflow-wrap: brea
 
     /* cross-links: icon stays left, tighter */
     .svc-cross a { padding: 16px; }
+
+    /* ---- Footer revamp: compact 2-col link grid + tidy bottom bar ---- */
+    .footer { padding: 48px 0 30px; }
+    .footer-content { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+    .footer-brand { grid-column: 1 / -1; }
+    .footer-brand p { max-width: none; margin: 14px 0 18px; }
+    .footer-brand .btn { width: 100%; justify-content: center; }
+    .footer-section h4 { margin-bottom: 13px; }
+    .footer-section ul { gap: 12px; }
+    .footer-section ul a { display: inline-block; padding: 2px 0; } /* bigger tap target */
+    .footer-bottom { flex-direction: column-reverse; align-items: flex-start; gap: 16px; margin-top: 36px; padding-top: 22px; }
+    .social-links a { width: 42px; height: 42px; }
 }
 
 @media (max-width: 480px) {
