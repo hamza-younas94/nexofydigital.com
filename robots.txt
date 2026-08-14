@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Keep backend + config out of the index
+Disallow: /contact.php
+Disallow: /smtp-config.php
+Disallow: /router.php
+Disallow: /vendor/
+Disallow: /cgi-bin/
+
+Sitemap: https://nexofydigital.com/sitemap.xml

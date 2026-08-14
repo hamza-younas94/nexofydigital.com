@@ -2,6 +2,20 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.0.2] - 2026-08-14
+
+### Added
+- **SEO pass.** JSON-LD structured data (`ProfessionalService` + `WebSite`),
+  `robots.txt`, `sitemap.xml` (clean URLs), `<link rel="canonical">` on every page,
+  and a raster `og-image.png` (1200×630) so social previews actually render (SVG OG
+  images don't). Expanded Open Graph + Twitter Card tags (site_name, locale, image
+  dimensions/alt, explicit twitter title/description/image), `robots` directives with
+  `max-image-preview:large`, `author`, and `apple-touch-icon`.
+
+### Changed
+- Keyword-optimized `<title>`, meta description and keywords across the home page and
+  all three legal pages.
+
 ## [2.0.1] - 2026-08-14
 
 ### Fixed
