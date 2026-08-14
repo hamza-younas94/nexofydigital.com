@@ -2,6 +2,23 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.0.1] - 2026-08-14
+
+### Fixed
+- **Nav "Start a project" CTA rendered blank when scrolled to the contact section.**
+  The scroll-spy added `.active` to the `#contact` link (which is the CTA), and
+  `.nav-menu a.active` painted its text lime — lime-on-lime. Now the CTA is excluded
+  from the scroll-spy and forced to `--accent-ink` even when active.
+- **CSP blocked Cloudflare's analytics beacon** (`static.cloudflareinsights.com`).
+  Added it to `script-src` and `cloudflareinsights.com` to `connect-src`.
+
+### Added
+- Per-character blink sweep on the logo wordmark and every "Start a project" CTA —
+  a staggered start→end shimmer (respects `prefers-reduced-motion`).
+
+### Changed
+- Bumped asset cache-bust to `?v=2.0.1`.
+
 ## [2.0.0] - 2026-08-14
 
 ### Changed

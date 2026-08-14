@@ -27,7 +27,7 @@
   }
 
   /* ---- Active nav link while scrolling ---- */
-  const navLinks = Array.from(document.querySelectorAll('.nav-menu a[href^="#"]'));
+  const navLinks = Array.from(document.querySelectorAll('.nav-menu a[href^="#"]:not(.nav-cta)'));
   const sections = navLinks
     .map((a) => document.querySelector(a.getAttribute('href')))
     .filter(Boolean);
@@ -72,6 +72,32 @@
         card.style.setProperty('--my', (e.clientY - r.top) + 'px');
       });
     });
+  }
+
+  /* ---- Per-character blink sweep (logo + "Start a project" CTAs) ---- */
+  if (!reduce) {
+    const wrapChars = (node, counter) => {
+      Array.from(node.childNodes).forEach((child) => {
+        if (child.nodeType === Node.TEXT_NODE) {
+          const frag = document.createDocumentFragment();
+          for (const ch of child.textContent) {
+            const span = document.createElement('span');
+            span.className = 'ch';
+            span.style.setProperty('--i', counter.i++);
+            span.textContent = ch;
+            frag.appendChild(span);
+          }
+          node.replaceChild(frag, child);
+        } else if (child.nodeType === Node.ELEMENT_NODE && !child.classList.contains('arrow')) {
+          wrapChars(child, counter); // recurse (e.g. .logo-dim) but skip the → arrow
+        }
+      });
+    };
+    const targets = new Set(document.querySelectorAll('.logo-word'));
+    document.querySelectorAll('.btn, .nav-cta, .btn-text').forEach((el) => {
+      if (el.textContent.trim().toLowerCase().startsWith('start a project')) targets.add(el);
+    });
+    targets.forEach((el) => { el.classList.add('sweep'); wrapChars(el, { i: 0 }); });
   }
 
   /* ---- Contact form ---- */
