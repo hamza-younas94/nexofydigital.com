@@ -275,6 +275,20 @@ const GA = `    <!-- Google tag (gtag.js) -->
     </script>`;
 
 const icon = (key, cls) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${ICONS[key]}</svg>`;
+const swoosh = (w) => `<span class="swoosh-word">${w}<svg class="swoosh" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M5 15 C 70 4, 150 4, 210 11 S 275 20, 295 7"/></svg></span>`;
+const swooshLast = (str) => str.replace(/ ([^ ]+)$/, (m, w) => ' ' + swoosh(w));
+const MARQUEE = `
+    <div class="marquee reveal" aria-label="Technologies we build with">
+        <div class="marquee-inner">
+            <span class="marquee-label">Built with</span>
+            <div class="marquee-track">
+                <div class="marquee-flow">
+                    <div class="marquee-group"><span>React</span><span>Next.js</span><span>Node.js</span><span>Go</span><span>PHP · Laravel</span><span>Kotlin</span><span>PostgreSQL</span><span>Docker</span><span>AWS</span><span>Redis</span></div>
+                    <div class="marquee-group" aria-hidden="true"><span>React</span><span>Next.js</span><span>Node.js</span><span>Go</span><span>PHP · Laravel</span><span>Kotlin</span><span>PostgreSQL</span><span>Docker</span><span>AWS</span><span>Redis</span></div>
+                </div>
+            </div>
+        </div>
+    </div>`;
 const cardTitle = (s) => s.name.replace(' Development', '').replace(' System', '').replace(' Software', '');
 
 function hubPage() {
@@ -348,8 +362,8 @@ ${NAV}
         <div class="hero-glow" aria-hidden="true"></div>
         <div class="container">
             <div class="hero-inner reveal">
-                <p class="eyebrow"><span class="pulse"></span>What we do</p>
-                <h1 class="hero-title">Everything we <span class="accent-text">build</span>.</h1>
+                <p class="badge"><span class="pulse"></span>What we do</p>
+                <h1 class="hero-title">Everything we ${swoosh('build')}.</h1>
                 <p class="hero-subtitle">Six things we're genuinely good at. Pick one, or hand us the whole stack — each is a system we've shipped to production and still maintain.</p>
                 <div class="hero-buttons">
                     <a href="/#contact" class="btn btn-primary">Start a project</a>
@@ -358,6 +372,7 @@ ${NAV}
             </div>
         </div>
     </section>
+${MARQUEE}
 
     <section id="grid" class="services section" style="padding-top:0">
         <div class="container">
@@ -470,8 +485,8 @@ ${NAV}
         <div class="hero-glow" aria-hidden="true"></div>
         <div class="container">
             <div class="hero-inner reveal">
-                <p class="eyebrow breadcrumb"><a href="/services">Services</a> · ${s.nav}</p>
-                <h1 class="hero-title">${s.name.replace(/ ([^ ]+)$/, ' <span class="accent-text">$1</span>')}</h1>
+                <p class="badge breadcrumb"><a href="/services">Services</a> · ${s.nav}</p>
+                <h1 class="hero-title">${swooshLast(s.name)}</h1>
                 <p class="hero-subtitle">${s.lead}</p>
                 <div class="hero-buttons">
                     <a href="/#contact" class="btn btn-primary">Start a project</a>
@@ -480,6 +495,7 @@ ${NAV}
             </div>
         </div>
     </section>
+${MARQUEE}
 
     <section id="what" class="services section">
         <div class="container">

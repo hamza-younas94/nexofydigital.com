@@ -2,6 +2,14 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.7.1] - 2026-08-15
+
+### Changed
+- Extended the creative layer to the **service pages and the /services hub** so they
+  match the landing page: hero eyebrow becomes a pill badge, the hero headline's key
+  word gets the lime swoosh underline, and the "Built with" tech marquee now sits under
+  each hero (via the generator). No CSS change — assets stay at ?v=2.7.0.
+
 ## [2.7.0] - 2026-08-15
 
 ### Added
