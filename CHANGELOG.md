@@ -2,6 +2,19 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.7.0] - 2026-08-15
+
+### Added
+- **Creative-agency layer on the home hero:** a bordered pill badge, a hand-drawn lime
+  "swoosh" underline (animated inline SVG) under *properly*, two ambient floating trust
+  chips (desktop), and a "Built with" auto-scrolling **tech marquee** (pauses on hover).
+  All respect `prefers-reduced-motion`.
+
+### Changed
+- **Minified CSS + JS** (esbuild): `styles.min.css` (38→29 KB) and `script.min.js`
+  (8.2→5 KB) are now served in place of the source; `build/minify.sh` regenerates them.
+  Source files stay readable. Assets bumped to `?v=2.7.0`.
+
 ## [2.6.0] - 2026-08-15
 
 ### Added

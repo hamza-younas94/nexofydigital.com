@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const V = '2.6.0'; // asset cache-bust version (keep in sync with styles.css/script.js)
+const V = '2.7.0'; // asset cache-bust version (keep in sync with styles.css/script.js)
 const ORIGIN = 'https://nexofydigital.com';
 
 const ICONS = {
@@ -330,7 +330,7 @@ ${GA}
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/favicon.svg">
-    <link rel="stylesheet" href="/styles.css?v=${V}">
+    <link rel="stylesheet" href="/styles.min.css?v=${V}">
     <link rel="preload" href="/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -386,7 +386,7 @@ ${NAV}
 ${FOOTER}
 
     <div class="grain" aria-hidden="true"></div>
-    <script src="/script.js?v=${V}"></script>
+    <script src="/script.min.js?v=${V}"></script>
 </body>
 </html>
 `;
@@ -452,7 +452,7 @@ ${GA}
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/favicon.svg">
-    <link rel="stylesheet" href="/styles.css?v=${V}">
+    <link rel="stylesheet" href="/styles.min.css?v=${V}">
     <link rel="preload" href="/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -564,7 +564,7 @@ ${NAV}
 ${FOOTER}
 
     <div class="grain" aria-hidden="true"></div>
-    <script src="/script.js?v=${V}"></script>
+    <script src="/script.min.js?v=${V}"></script>
 </body>
 </html>
 `;
@@ -585,7 +585,7 @@ ${GA}
     <link rel="apple-touch-icon" href="/favicon.svg">
     <link rel="preload" href="/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/styles.css?v=${V}">
+    <link rel="stylesheet" href="/styles.min.css?v=${V}">
 </head>
 <body>
     <a href="#nf" class="skip-link">Skip to content</a>
@@ -611,7 +611,7 @@ ${NAV}
 ${FOOTER}
 
     <div class="grain" aria-hidden="true"></div>
-    <script src="/script.js?v=${V}"></script>
+    <script src="/script.min.js?v=${V}"></script>
 </body>
 </html>
 `;
