@@ -2,6 +2,16 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.9.0] - 2026-08-16
+
+### Changed
+- **Removed AI-writing tells sitewide** (readability + avoids "AI content" SEO signals):
+  every em/en dash replaced with natural punctuation (commas, colons, periods); the
+  sparkle glyph swapped for a check mark in benefit lists and a clean lime dot in the
+  marquee; reworded "genuinely". Applied to the home page, all six service pages, the
+  /services hub, the 404 and the legal pages (source + generator). Re-minified; assets
+  bumped to ?v=2.9.0.
+
 ## [2.8.0] - 2026-08-15
 
 ### Added

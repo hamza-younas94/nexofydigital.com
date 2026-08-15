@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const V = '2.8.0'; // asset cache-bust version (keep in sync with styles.css/script.js)
+const V = '2.9.0'; // asset cache-bust version (keep in sync with styles.css/script.js)
 const ORIGIN = 'https://nexofydigital.com';
 
 const ICONS = {
@@ -23,15 +23,15 @@ const SERVICES = [
     slug: 'web-application-development', icon: 'web', nav: 'Web apps',
     name: 'Custom Web Application Development',
     title: 'Custom Web Application Development | Nexofy Digital',
-    desc: 'We design and build fast, scalable custom web applications — dashboards, portals and internal tools — with modern stacks, tests and full handover. No lock-in.',
+    desc: 'We design and build fast, scalable custom web applications, dashboards, portals and internal tools, with modern stacks, tests and full handover. No lock-in.',
     keywords: 'custom web application development, web app development company, saas development, dashboard development, internal tools, react next.js developers',
-    lead: 'Dashboards, customer portals and internal tools that stay fast as they grow — built on modern stacks, tested, and handed over with docs instead of a mystery box.',
+    lead: 'Dashboards, customer portals and internal tools that stay fast as they grow, built on modern stacks, tested, and handed over with docs instead of a mystery box.',
     features: [
-      ['Built to scale', 'Architecture that holds up as your data and traffic grow — no rewrite at 10,000 rows.'],
+      ['Built to scale', 'Architecture that holds up as your data and traffic grow, no rewrite at 10,000 rows.'],
       ['Modern stack', 'React / Next.js on the front, Node, Go or PHP on the back, Postgres for data.'],
       ['Tested & documented', 'Automated tests and real docs so the next developer (or ours) can move fast.'],
       ['Role-based access', 'Granular permissions and audit trails baked in from the start, not bolted on.'],
-      ['API-first', 'Clean APIs so your app talks to the tools you already use — payments, CRMs, email.'],
+      ['API-first', 'Clean APIs so your app talks to the tools you already use: payments, CRMs, email.'],
       ['Yours to own', 'You get the code, the pipeline and the servers. No vendor lock-in, ever.'],
     ],
     forWho: [
@@ -41,10 +41,10 @@ const SERVICES = [
     ],
     tags: ['React / Next.js', 'Node · Go · PHP', 'PostgreSQL', 'REST / GraphQL', 'Docker'],
     faqs: [
-      ['How long does a custom web app take?', 'Most builds run 4–12 weeks depending on scope. We give you a fixed plan and timeline before any code is written.'],
-      ['What does it cost?', 'Fixed-scope, fixed-price. After a short scoping call you get a real number — no open-ended hourly surprises.'],
+      ['How long does a custom web app take?', 'Most builds run 4 to 12 weeks depending on scope. We give you a fixed plan and timeline before any code is written.'],
+      ['What does it cost?', 'Fixed-scope, fixed-price. After a short scoping call you get a real number, no open-ended hourly surprises.'],
       ['Do I own the code?', 'Yes. You get the full source, deployment pipeline and infrastructure access. There is no lock-in.'],
-      ['Can you integrate with our existing systems?', 'Yes — payments, CRMs, ERPs, email and third-party APIs. Integration is a core part of most builds.'],
+      ['Can you integrate with our existing systems?', 'Yes: payments, CRMs, ERPs, email and third-party APIs. Integration is a core part of most builds.'],
     ],
   },
   {
@@ -55,7 +55,7 @@ const SERVICES = [
     keywords: 'android app development, kotlin app development, mobile app development company, cross-platform apps, play store app development, offline mobile apps',
     lead: 'Native Kotlin and cross-platform Android apps that feel right on the device, behave offline, and ship to the Play Store without drama.',
     features: [
-      ['Native feel', 'Kotlin builds that respect Android conventions — gestures, back-stack, material motion.'],
+      ['Native feel', 'Kotlin builds that respect Android conventions: gestures, back-stack, material motion.'],
       ['Works offline', 'Local-first data with background sync so the app keeps working without signal.'],
       ['Play Store ready', 'We handle signing, store listing, releases and staged rollouts.'],
       ['Hardware access', 'Camera, GPS, barcode scanning, Bluetooth and notifications wired in properly.'],
@@ -63,31 +63,31 @@ const SERVICES = [
       ['One backend', 'The app and your web dashboard can share a single API and source of truth.'],
     ],
     forWho: [
-      ['Field teams', 'Apps for staff on the move — delivery, inventory counts, on-site data capture.'],
+      ['Field teams', 'Apps for staff on the move: delivery, inventory counts, on-site data capture.'],
       ['Product owners', 'A polished consumer app with a roadmap, not a one-off throwaway.'],
-      ['Retailers', 'A mobile companion to your POS — stock checks, orders, loyalty in one place.'],
+      ['Retailers', 'A mobile companion to your POS: stock checks, orders, loyalty in one place.'],
     ],
     tags: ['Kotlin', 'Jetpack Compose', 'Offline sync', 'REST APIs', 'Play Store'],
     faqs: [
       ['Native or cross-platform?', 'We advise per project. Native Kotlin for performance-heavy or hardware-heavy apps; cross-platform when speed-to-market and a shared codebase matter more.'],
-      ['Do you publish to the Play Store?', 'Yes — signing, store listing, review submission and staged rollouts are all handled.'],
+      ['Do you publish to the Play Store?', 'Yes: signing, store listing, review submission and staged rollouts are all handled.'],
       ['Can it work without internet?', 'Yes. We build local-first with background sync so the app stays usable offline and reconciles when it reconnects.'],
-      ['Do you do iOS too?', 'Our focus is Android. For cross-platform builds an iOS target is often achievable — ask us during scoping.'],
+      ['Do you do iOS too?', 'Our focus is Android. For cross-platform builds an iOS target is often achievable. Ask us during scoping.'],
     ],
   },
   {
     slug: 'crm-cms-development', icon: 'crm', nav: 'CRM / CMS',
     name: 'CRM & CMS Development',
     title: 'Custom CRM & CMS Development | Nexofy Digital',
-    desc: 'Custom CRM and CMS platforms shaped around how your team actually works — sales pipelines, customer records and content management, without the bloat of off-the-shelf tools.',
+    desc: 'Custom CRM and CMS platforms shaped around how your team actually works: sales pipelines, customer records and content management, without the bloat of off-the-shelf tools.',
     keywords: 'custom crm development, custom cms development, crm software company, sales pipeline software, content management system, customer management software',
-    lead: 'Customer, sales and content systems shaped around how your team actually works — not a generic tool you bend your process around.',
+    lead: 'Customer, sales and content systems shaped around how your team actually works, not a generic tool you bend your process around.',
     features: [
       ['Your pipeline, your way', 'Stages, fields and automations that match how you actually sell and support.'],
-      ['One customer record', 'Contacts, deals, tickets and history in one place — no more scattered spreadsheets.'],
+      ['One customer record', 'Contacts, deals, tickets and history in one place. No more scattered spreadsheets.'],
       ['Content management', 'Structured, editor-friendly CMS so non-technical staff update the site safely.'],
       ['Automation', 'Follow-ups, reminders and hand-offs that run themselves.'],
-      ['Roles & permissions', 'Reps see their accounts, managers see the whole board — controlled to the field.'],
+      ['Roles & permissions', 'Reps see their accounts, managers see the whole board, controlled to the field.'],
       ['Reports that matter', 'Dashboards built around your KPIs, not a vendor’s idea of them.'],
     ],
     forWho: [
@@ -97,21 +97,21 @@ const SERVICES = [
     ],
     tags: ['Custom fields', 'Automations', 'Role-based access', 'Reporting', 'API integrations'],
     faqs: [
-      ['Why not just use an off-the-shelf CRM?', 'If a standard tool fits, use it. We build custom when your process is the product — unusual pipelines, tight integrations, or per-seat pricing that stops making sense at scale.'],
-      ['Can you migrate our existing data?', 'Yes — importing contacts, deals and content from spreadsheets or another platform is part of the build.'],
+      ['Why not just use an off-the-shelf CRM?', 'If a standard tool fits, use it. We build custom when your process is the product: unusual pipelines, tight integrations, or per-seat pricing that stops making sense at scale.'],
+      ['Can you migrate our existing data?', 'Yes: importing contacts, deals and content from spreadsheets or another platform is part of the build.'],
       ['Will non-technical staff be able to use it?', 'That’s the point. The CMS and CRM are built for the people using them daily, with sensible defaults and guardrails.'],
-      ['Does it integrate with email and payments?', 'Yes — email, calendars, payment providers and other APIs connect into the same system.'],
+      ['Does it integrate with email and payments?', 'Yes: email, calendars, payment providers and other APIs connect into the same system.'],
     ],
   },
   {
     slug: 'epos-system', icon: 'epos', nav: 'ePOS',
     name: 'ePOS System Development',
     title: 'ePOS & Point of Sale System Development | Nexofy Digital',
-    desc: 'Modern ePOS and point-of-sale systems with live inventory, split payments, receipts and reporting — for a single counter or a chain. Built and maintained by Nexofy Digital.',
+    desc: 'Modern ePOS and point-of-sale systems with live inventory, split payments, receipts and reporting, for a single counter or a chain. Built and maintained by Nexofy Digital.',
     keywords: 'epos system, point of sale software, pos system development, retail pos, custom epos, inventory pos system, cloud pos',
-    lead: 'Point of sale with live inventory, split payments, receipts and end-of-day reporting — for one counter or fifty, all sharing one source of truth.',
+    lead: 'Point of sale with live inventory, split payments, receipts and end-of-day reporting, for one counter or fifty, all sharing one source of truth.',
     features: [
-      ['Fast at the counter', 'A till that keeps up at peak — barcode scan, quick keys, no lag.'],
+      ['Fast at the counter', 'A till that keeps up at peak: barcode scan, quick keys, no lag.'],
       ['Live inventory', 'Every sale updates stock in real time, across every register and location.'],
       ['Split & mixed payments', 'Cash, card, wallet and split tenders handled cleanly with a printed or emailed receipt.'],
       ['Back office on the web', 'Products, prices, staff and reports managed from anywhere.'],
@@ -125,26 +125,26 @@ const SERVICES = [
     ],
     tags: ['Barcode / SKU', 'Live inventory', 'Split payments', 'Receipts', 'Multi-location'],
     faqs: [
-      ['Does it work on a tablet?', 'Yes — the till runs on a tablet at the counter and the back office runs on the web, sharing one database.'],
+      ['Does it work on a tablet?', 'Yes, the till runs on a tablet at the counter and the back office runs on the web, sharing one database.'],
       ['Can it handle multiple stores?', 'Yes. Per-store stock and pricing roll up into one dashboard so you see the whole business.'],
       ['Does inventory update automatically?', 'Every sale, return and stock movement updates inventory in real time across all registers.'],
-      ['Can we keep our receipt printer / scanner?', 'Usually — standard barcode scanners and receipt printers are supported. Tell us your hardware during scoping.'],
+      ['Can we keep our receipt printer / scanner?', 'Usually, standard barcode scanners and receipt printers are supported. Tell us your hardware during scoping.'],
     ],
   },
   {
     slug: 'restaurant-management-system', icon: 'restaurant', nav: 'Restaurant',
     name: 'Restaurant Management System',
     title: 'Restaurant Management System Development | Nexofy Digital',
-    desc: 'A complete restaurant management system — orders from table to kitchen display, menus, modifiers, tables and staff shifts in one screen. Built for a floor that never stops.',
+    desc: 'A complete restaurant management system, orders from table to kitchen display, menus, modifiers, tables and staff shifts in one screen. Built for a floor that never stops.',
     keywords: 'restaurant management system, restaurant pos, kitchen display system, table management software, restaurant ordering system, cafe management software',
     lead: 'Orders flow from table to kitchen display without paper. Menus, modifiers, tables and staff shifts in one system, built for a floor that doesn’t stop moving.',
     features: [
-      ['Table to kitchen', 'Orders go straight to a kitchen display — no runners, no lost tickets.'],
+      ['Table to kitchen', 'Orders go straight to a kitchen display, no runners, no lost tickets.'],
       ['Menus & modifiers', 'Full menu control with modifiers, combos and 86’d items in real time.'],
       ['Table management', 'Floor plan, covers and status at a glance so the front of house flows.'],
       ['Split & merge bills', 'Split by item or guest, merge tables, and take mixed payments cleanly.'],
       ['Staff & shifts', 'Roles, clock-in and per-staff sales for accountability.'],
-      ['Live reporting', 'Sales by item, hour and server — know what’s working while service is on.'],
+      ['Live reporting', 'Sales by item, hour and server, know what’s working while service is on.'],
     ],
     forWho: [
       ['Restaurants', 'One system for orders, kitchen, tables and payments instead of three.'],
@@ -153,25 +153,25 @@ const SERVICES = [
     ],
     tags: ['Kitchen display', 'Table plan', 'Modifiers', 'Split bills', 'Shift management'],
     faqs: [
-      ['Does it include a kitchen display?', 'Yes — orders route from the table or till straight to a kitchen display screen, no printed tickets required.'],
-      ['Can we split and merge bills?', 'Yes — split by item or guest, merge tables, and take partial and mixed payments.'],
-      ['Can staff use it on tablets at the table?', 'Yes — take orders tableside on a tablet and they hit the kitchen instantly.'],
-      ['Does it handle multiple branches?', 'Yes — shared menus and consolidated reporting across locations.'],
+      ['Does it include a kitchen display?', 'Yes, orders route from the table or till straight to a kitchen display screen, no printed tickets required.'],
+      ['Can we split and merge bills?', 'Yes, split by item or guest, merge tables, and take partial and mixed payments.'],
+      ['Can staff use it on tablets at the table?', 'Yes, take orders tableside on a tablet and they hit the kitchen instantly.'],
+      ['Does it handle multiple branches?', 'Yes, shared menus and consolidated reporting across locations.'],
     ],
   },
   {
     slug: 'inventory-management-software', icon: 'inventory', nav: 'Inventory',
     name: 'Inventory Management Software',
     title: 'Inventory Management Software Development | Nexofy Digital',
-    desc: 'Real-time inventory management software for hardware shops, retail and warehouses — barcode in, low-stock alerts out, and numbers you can trust at close. Built by Nexofy Digital.',
+    desc: 'Real-time inventory management software for hardware shops, retail and warehouses, barcode in, low-stock alerts out, and numbers you can trust at close. Built by Nexofy Digital.',
     keywords: 'inventory management software, stock management system, warehouse management software, barcode inventory system, stock control software, multi-location inventory',
-    lead: 'Real-time stock for hardware shops, retail and warehouses — barcode in, low-stock alerts out, and numbers you can trust at close.',
+    lead: 'Real-time stock for hardware shops, retail and warehouses, barcode in, low-stock alerts out, and numbers you can trust at close.',
     features: [
-      ['Real-time stock', 'Every sale, return and transfer updates quantities instantly — no end-of-day guesswork.'],
+      ['Real-time stock', 'Every sale, return and transfer updates quantities instantly, no end-of-day guesswork.'],
       ['Barcode & SKU', 'Scan in, scan out. Fast counts and receiving with proper SKU management.'],
       ['Low-stock alerts', 'Automatic reorder points so you never run out of your best sellers.'],
       ['Multi-location', 'Track stock across shops and warehouses with transfers between them.'],
-      ['Movement history', 'A full audit trail — opening stock, adjustments, sales — per item.'],
+      ['Movement history', 'A full audit trail, opening stock, adjustments, sales, per item.'],
       ['Reports & valuation', 'Stock value, dead stock and fast-movers surfaced when you need them.'],
     ],
     forWho: [
@@ -181,10 +181,10 @@ const SERVICES = [
     ],
     tags: ['Barcode / SKU', 'Low-stock alerts', 'Multi-location', 'Transfers', 'Audit trail'],
     faqs: [
-      ['Does it connect to our POS?', 'Yes — our inventory and ePOS share one database, so sales decrement stock automatically. It can also integrate with an existing till.'],
-      ['Can it track multiple warehouses?', 'Yes — per-location stock with transfers between shops and warehouses, all in one dashboard.'],
-      ['Do we get low-stock alerts?', 'Yes — set reorder points per item and get alerted before you run out.'],
-      ['Is there an audit trail?', 'Every stock movement is logged — opening stock, adjustments, sales and transfers — viewable per item.'],
+      ['Does it connect to our POS?', 'Yes, our inventory and ePOS share one database, so sales decrement stock automatically. It can also integrate with an existing till.'],
+      ['Can it track multiple warehouses?', 'Yes, per-location stock with transfers between shops and warehouses, all in one dashboard.'],
+      ['Do we get low-stock alerts?', 'Yes, set reorder points per item and get alerted before you run out.'],
+      ['Is there an audit trail?', 'Every stock movement is logged, opening stock, adjustments, sales and transfers, viewable per item.'],
     ],
   },
 ];
@@ -293,7 +293,7 @@ const cardTitle = (s) => s.name.replace(' Development', '').replace(' System', '
 
 function hubPage() {
   const url = `${ORIGIN}/services`;
-  const title = 'Our Services — Custom Software, Web &amp; Android App Development | Nexofy Digital';
+  const title = 'Our Services, Custom Software, Web &amp; Android App Development | Nexofy Digital';
   const desc = 'Everything Nexofy Digital designs and builds: custom web apps, Android apps, CRM/CMS platforms, ePOS, restaurant management and inventory systems.';
   const jsonld = {
     '@context': 'https://schema.org',
@@ -364,7 +364,7 @@ ${NAV}
             <div class="hero-inner reveal">
                 <p class="badge"><span class="pulse"></span>What we do</p>
                 <h1 class="hero-title">Everything we ${swoosh('build')}.</h1>
-                <p class="hero-subtitle">Six things we're genuinely good at. Pick one, or hand us the whole stack — each is a system we've shipped to production and still maintain.</p>
+                <p class="hero-subtitle">Six things we're really good at. Pick one, or hand us the whole stack, each is a system we've shipped to production and still maintain.</p>
                 <div class="hero-buttons">
                     <a href="/#contact" class="btn btn-primary">Start a project</a>
                     <a href="/#work" class="btn btn-ghost">See recent work<span class="arrow">→</span></a>
@@ -392,7 +392,7 @@ ${MARQUEE}
         <div class="container">
             <div class="cta-band reveal">
                 <h2>Not sure which one you need?</h2>
-                <p>Tell us the problem in a sentence or two. We'll point you at the right fit — or tell you honestly if it's not us.</p>
+                <p>Tell us the problem in a sentence or two. We'll point you at the right fit, or tell you honestly if it's not us.</p>
                 <a href="/#contact" class="btn btn-primary">Start a project</a>
             </div>
         </div>
@@ -593,7 +593,7 @@ function notFoundPage() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ${GA}
-    <title>Page not found — Nexofy Digital</title>
+    <title>Page not found, Nexofy Digital</title>
     <meta name="description" content="The page you were looking for doesn't exist or has moved. Head back to Nexofy Digital.">
     <meta name="robots" content="noindex, follow">
     <meta name="theme-color" content="#0a0b0d">
@@ -615,7 +615,7 @@ ${NAV}
             <div class="hero-inner reveal" style="max-width: 660px; margin: 0 auto; text-align: center;">
                 <p class="eyebrow" style="justify-content: center;">Error 404</p>
                 <h1 class="hero-title" style="font-size: clamp(4.5rem, 22vw, 10rem); line-height: 0.9;">4<span class="accent-text">0</span>4</h1>
-                <p class="hero-subtitle" style="margin: 22px auto 0;">This page took a wrong turn — it may have moved, or never existed. Let's get you back on track.</p>
+                <p class="hero-subtitle" style="margin: 22px auto 0;">This page took a wrong turn, it may have moved, or never existed. Let's get you back on track.</p>
                 <div class="hero-buttons" style="justify-content: center;">
                     <a href="/" class="btn btn-primary">Back home</a>
                     <a href="/services" class="btn btn-ghost">Browse services<span class="arrow">→</span></a>

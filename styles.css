@@ -1,5 +1,5 @@
 /* ============================================================
-   Nexofy Digital — dark premium tech system
+   Nexofy Digital - dark premium tech system
    ============================================================ */
 
 /* Self-hosted variable fonts (no third-party requests, faster LCP) */
@@ -11,7 +11,7 @@
 [hidden] { display: none !important; }
 
 :root {
-    /* surfaces — cool off-black, single hue family */
+    /* surfaces - cool off-black, single hue family */
     --bg:        #0a0b0d;
     --bg-elev:   #101216;
     --surface:   #14171c;
@@ -19,7 +19,7 @@
     --line:      rgba(255, 255, 255, 0.08);
     --line-strong: rgba(255, 255, 255, 0.14);
 
-    /* text — one cool gray family */
+    /* text - one cool gray family */
     --text:      #e9ebef;
     --text-dim:  #9aa2ad;
     --text-faint:#666e79;
@@ -47,7 +47,7 @@
 
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-    /* z-scale — no magic 9999 */
+    /* z-scale - no magic 9999 */
     --z-nav: 100;
     --z-grain: 200;
 }
@@ -132,7 +132,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .btn-sm { padding: 10px 16px; font-size: 0.9rem; }
 
 /* ============================================================
-   Navbar (class names shared with legal pages — keep stable)
+   Navbar (class names shared with legal pages - keep stable)
    ============================================================ */
 .navbar {
     position: fixed; top: 0; left: 0; right: 0; z-index: var(--z-nav);
@@ -189,7 +189,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .hero-buttons { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px; }
 
 /* Full-width metric band that anchors the hero (spans the container, not the
-   900px text column) — even 4-up with hairline dividers between cells. */
+   900px text column) - even 4-up with hairline dividers between cells. */
 .hero-stats {
     display: grid; grid-template-columns: repeat(4, 1fr);
     margin-top: clamp(48px, 6vw, 76px); padding-top: clamp(30px, 3.4vw, 44px);
@@ -202,7 +202,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .hero-stats .stat dd { color: var(--text-faint); font-size: 0.9rem; margin-top: 8px; }
 
 /* ============================================================
-   Services — asymmetric bento grid (not 3 equal columns)
+   Services - asymmetric bento grid (not 3 equal columns)
    ============================================================ */
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .service-card {
@@ -235,7 +235,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .service-more:hover .arrow { transform: translateX(3px); }
 
 /* ============================================================
-   Work — asymmetric horizontal rows (not a card grid)
+   Work - asymmetric horizontal rows (not a card grid)
    ============================================================ */
 .work-list { display: flex; flex-direction: column; }
 .work-item {
@@ -258,7 +258,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .work-visual svg { width: 40px; height: 40px; position: relative; z-index: 1; }
 
 /* ============================================================
-   Process — numbered rail
+   Process - numbered rail
    ============================================================ */
 .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; list-style: none; }
 .process-step { position: relative; padding: 28px 0 0; border-top: 2px solid var(--line); }
@@ -406,7 +406,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 @media print { .wa-float { display: none; } }
 
 /* ============================================================
-   Creative layer — badge, swoosh underline, floating chips, marquee
+   Creative layer - badge, swoosh underline, floating chips, marquee
    ============================================================ */
 /* Pill badge (hero) */
 .badge {
@@ -450,7 +450,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .marquee:hover .marquee-flow { animation-play-state: paused; }
 .marquee-group { display: flex; align-items: center; gap: 44px; padding: 16px 44px 16px 0; }
 .marquee-group span { font-family: var(--font-display); font-weight: 500; font-size: 1.05rem; color: var(--text-dim); white-space: nowrap; }
-.marquee-group span::before { content: "✦"; color: var(--accent); margin-right: 44px; font-size: 0.62em; vertical-align: middle; }
+.marquee-group span::before { content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); margin-right: 44px; vertical-align: middle; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 @media (prefers-reduced-motion: reduce) {
@@ -531,7 +531,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
     .services-grid { grid-template-columns: 1fr; }
     .service-card.card-wide { grid-column: span 1; }
 
-    /* Work rows become tight cards with a colored left accent — the big
+    /* Work rows become tight cards with a colored left accent - the big
        decorative icon is dropped on phones (it only added dead space). */
     .work-list { gap: 12px; }
     .work-item {
