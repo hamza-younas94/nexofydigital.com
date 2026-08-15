@@ -49,8 +49,8 @@ if (is_file($file)) {
     return true;
 }
 
-// Nothing matched → 404 (fall back to home so links never dead-end locally).
+// Nothing matched → branded 404.
 http_response_code(404);
 header('Content-Type: text/html; charset=UTF-8');
-readfile($root . '/index.html');
+readfile($root . '/404.html');
 return true;

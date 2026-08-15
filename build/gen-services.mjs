@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const V = '2.3.2'; // asset cache-bust version (keep in sync with styles.css/script.js)
+const V = '2.6.0'; // asset cache-bust version (keep in sync with styles.css/script.js)
 const ORIGIN = 'https://nexofydigital.com';
 
 const ICONS = {
@@ -259,7 +259,11 @@ const FOOTER = `
                 </div>
             </div>
         </div>
-    </footer>`;
+    </footer>
+
+    <a class="wa-float" href="https://wa.me/923462115115?text=Hi%20Nexofy%20Digital%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.48 1.69.62.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.5a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.02c0-5.19 4.23-9.42 9.43-9.42 2.52 0 4.88.98 6.66 2.76a9.36 9.36 0 0 1 2.76 6.67c0 5.19-4.24 9.42-9.4 9.42zM20.13 3.86A11.36 11.36 0 0 0 12.05.5C5.8.5.72 5.58.72 11.83c0 2.01.53 3.97 1.53 5.7L.62 23.5l6.1-1.6a11.34 11.34 0 0 0 5.42 1.38c6.24 0 11.32-5.08 11.33-11.33a11.3 11.3 0 0 0-3.34-8.09z"/></svg>
+    </a>`;
 
 const GA = `    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HV72B62E1"></script>
@@ -316,20 +320,19 @@ ${GA}
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${desc}">
     <meta property="og:url" content="${url}">
-    <meta property="og:image" content="${ORIGIN}/og-image.png">
+    <meta property="og:image" content="${ORIGIN}/og-services.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${title}">
     <meta name="twitter:description" content="${desc}">
-    <meta name="twitter:image" content="${ORIGIN}/og-image.png">
+    <meta name="twitter:image" content="${ORIGIN}/og-services.png">
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/favicon.svg">
     <link rel="stylesheet" href="/styles.css?v=${V}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preload" href="/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
 
     <script type="application/ld+json">
 ${JSON.stringify(jsonld, null, 2)}
@@ -439,20 +442,19 @@ ${GA}
     <meta property="og:title" content="${s.title}">
     <meta property="og:description" content="${s.desc}">
     <meta property="og:url" content="${url}">
-    <meta property="og:image" content="${ORIGIN}/og-image.png">
+    <meta property="og:image" content="${ORIGIN}/og-${s.slug}.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${s.title}">
     <meta name="twitter:description" content="${s.desc}">
-    <meta name="twitter:image" content="${ORIGIN}/og-image.png">
+    <meta name="twitter:image" content="${ORIGIN}/og-${s.slug}.png">
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/favicon.svg">
     <link rel="stylesheet" href="/styles.css?v=${V}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preload" href="/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
 
     <script type="application/ld+json">
 ${JSON.stringify(jsonld, null, 2)}
@@ -568,12 +570,60 @@ ${FOOTER}
 `;
 }
 
+function notFoundPage() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+${GA}
+    <title>Page not found — Nexofy Digital</title>
+    <meta name="description" content="The page you were looking for doesn't exist or has moved. Head back to Nexofy Digital.">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#0a0b0d">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    <link rel="preload" href="/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/styles.css?v=${V}">
+</head>
+<body>
+    <a href="#nf" class="skip-link">Skip to content</a>
+${NAV}
+
+    <main id="nf">
+    <section class="hero" style="min-height: 72vh; display: flex; align-items: center;">
+        <div class="hero-grid-lines" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="container">
+            <div class="hero-inner reveal" style="max-width: 660px; margin: 0 auto; text-align: center;">
+                <p class="eyebrow" style="justify-content: center;">Error 404</p>
+                <h1 class="hero-title" style="font-size: clamp(4.5rem, 22vw, 10rem); line-height: 0.9;">4<span class="accent-text">0</span>4</h1>
+                <p class="hero-subtitle" style="margin: 22px auto 0;">This page took a wrong turn — it may have moved, or never existed. Let's get you back on track.</p>
+                <div class="hero-buttons" style="justify-content: center;">
+                    <a href="/" class="btn btn-primary">Back home</a>
+                    <a href="/services" class="btn btn-ghost">Browse services<span class="arrow">→</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+${FOOTER}
+
+    <div class="grain" aria-hidden="true"></div>
+    <script src="/script.js?v=${V}"></script>
+</body>
+</html>
+`;
+}
+
 for (const s of SERVICES) {
   const out = resolve(ROOT, `${s.slug}.html`);
   writeFileSync(out, page(s));
   console.log('wrote', `${s.slug}.html`);
 }
 writeFileSync(resolve(ROOT, 'services.html'), hubPage());
-console.log('wrote services.html (hub)');
+writeFileSync(resolve(ROOT, '404.html'), notFoundPage());
+console.log('wrote services.html (hub) + 404.html');
 console.log(`\n${SERVICES.length} service pages + 1 hub generated (v${V}).`);
 console.log('Slugs:', SERVICES.map((s) => '/' + s.slug).join('  '));
