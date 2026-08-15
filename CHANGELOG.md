@@ -2,6 +2,19 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.9.1] - 2026-08-16
+
+### Fixed
+- **"Why us" mock cards looked like they were stuck loading.** Each zig-zag visual
+  was a browser-window frame filled with generic gray placeholder bars
+  (`.zz-line`, `background: var(--line)`) plus one lime bar — visually identical to
+  a content-loading skeleton, so on both desktop and mobile the section read as
+  "perpetually loading." Replaced the skeleton bars with real, finished content
+  per row: a title, a one-line caption, and a status pill —
+  *Direct line · Online now*, *Project quote · ✓ Approved*, *Handover pack ·
+  ✓ Yours to keep*. New `.zz-t` / `.zz-s` / `.zz-pill` / `.zz-dot` styles replace
+  the `.zz-line` rules. Re-minified; assets bumped to `?v=2.9.1`.
+
 ## [2.9.0] - 2026-08-16
 
 ### Changed
