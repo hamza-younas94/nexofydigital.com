@@ -459,6 +459,32 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
     .marquee-flow { animation: none; }
 }
 
+/* Zig-zag feature rows (alternating text / mock panel) */
+.zigzag { display: grid; gap: clamp(52px, 8vw, 104px); }
+.zz-row { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 78px); align-items: center; }
+.zz-row:nth-child(even) .zz-text { order: 2; }
+.zz-num { display: block; font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); margin-bottom: 14px; }
+.zz-text h3 { font-size: clamp(1.55rem, 3.4vw, 2.35rem); margin-bottom: 14px; }
+.zz-text p { color: var(--text-dim); max-width: 46ch; margin-bottom: 20px; }
+.zz-list { display: grid; gap: 11px; }
+.zz-list li { display: flex; gap: 11px; align-items: flex-start; color: var(--text); font-size: 0.97rem; }
+.zz-list .tick { color: var(--accent); font-size: 0.85rem; line-height: 1.6; }
+.zz-mock { position: relative; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); overflow: hidden; box-shadow: var(--shadow-lg); }
+.zz-mock::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 100% at 82% 0%, rgba(198,242,78,0.06), transparent 60%); }
+.zz-bar { display: flex; gap: 7px; padding: 15px 18px; border-bottom: 1px solid var(--line); }
+.zz-bar i { width: 11px; height: 11px; border-radius: 50%; background: var(--line-strong); }
+.zz-body { padding: 28px; display: grid; gap: 14px; }
+.zz-body .ico { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; background: var(--bg-elev); border: 1px solid var(--line); color: var(--accent); margin-bottom: 8px; }
+.zz-body .ico svg { width: 22px; height: 22px; }
+.zz-line { height: 12px; border-radius: 6px; background: var(--line); }
+.zz-line.w1 { width: 82%; } .zz-line.w2 { width: 56%; } .zz-line.w3 { width: 68%; }
+.zz-line.accent { width: 42%; height: 14px; background: linear-gradient(90deg, var(--accent), var(--accent-deep)); box-shadow: 0 5px 16px -5px var(--accent-glow); }
+@media (max-width: 760px) {
+    .zz-row { grid-template-columns: 1fr; gap: 22px; }
+    .zz-row .zz-text, .zz-row:nth-child(even) .zz-text { order: 0; }
+    .zz-row .zz-visual, .zz-row:nth-child(even) .zz-visual { order: 1; }
+}
+
 /* ============================================================
    Scroll reveal
    ============================================================ */

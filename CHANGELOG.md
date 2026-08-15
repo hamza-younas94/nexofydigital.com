@@ -2,6 +2,20 @@
 
 All notable changes to the Nexofy Digital site are documented here.
 
+## [2.8.0] - 2026-08-15
+
+### Added
+- **Zig-zag "Why us" section** on the home page — three alternating text / CSS-mock rows
+  (no middle layer · fixed price · you own it), mobile-first (stacks with text first).
+
+### Fixed
+- **/services hub: the tech marquee sat flush against the services grid** (the grid kept
+  `padding-top:0` from when it was directly under the hero). Restored normal spacing now
+  that the marquee sits between them.
+
+### Changed
+- Re-minified CSS (zig-zag styles); assets bumped to `?v=2.8.0`.
+
 ## [2.7.1] - 2026-08-15
 
 ### Changed

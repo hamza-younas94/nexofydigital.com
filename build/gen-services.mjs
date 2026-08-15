@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const V = '2.7.0'; // asset cache-bust version (keep in sync with styles.css/script.js)
+const V = '2.8.0'; // asset cache-bust version (keep in sync with styles.css/script.js)
 const ORIGIN = 'https://nexofydigital.com';
 
 const ICONS = {
@@ -374,7 +374,7 @@ ${NAV}
     </section>
 ${MARQUEE}
 
-    <section id="grid" class="services section" style="padding-top:0">
+    <section id="grid" class="services section">
         <div class="container">
             <div class="services-grid">
                 ${SERVICES.map((s, i) => `<article class="service-card reveal">
